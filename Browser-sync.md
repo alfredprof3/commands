@@ -1,4 +1,4 @@
-# Browser-sync.
+# Browser-sync
 
 1. Install
 
