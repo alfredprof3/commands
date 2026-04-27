@@ -1,8 +1,5 @@
-Collection of tools used to audit WiFi networks
-
-#### Install
-```bash
-# apt install autoconf \
+# Install
+apt install autoconf \
 automake \
 libtool \
 shtool \
@@ -62,37 +59,36 @@ libsqlite3-0 \
 libsqlite3-dev \
 libvsqlitepp-dev \
 libvsqlitepp3v5 \
-node-sqlite3 \
-```
+node-sqlite3
 
 1. Download
 
-`# wget https://download.aircrack-ng.org/aircrack-ng-1.7.tar.gz`
+wget https://download.aircrack-ng.org/aircrack-ng-1.7.tar.gz
 
 2. Tar
 
-`# tar -zxvf aircrack-ng-1.7.tar.gz`
+tar -zxvf aircrack-ng-1.7.tar.gz
 
 3. Directory
 
-`# cd aircrack-ng-1.7`
+cd aircrack-ng-1.7
 
 4. Autoreconf
 
-`# autoreconf -i`
+autoreconf -i
 
 5. Configure
 
-`# ./configure --with-experimental`
+./configure --with-experimental
 
 6. Compile
 
-`# make -j4`
+make -j4
 
 7. Install
 
-`# make install`
+make install
 
 8.  Create links commands
 
-`ldconfig`
+ldconfig
