@@ -1,4 +1,4 @@
-# Shell/Bash scripting with short tutorials
+# Shell/Bash scripting
 
 1. Create the sh file
 
