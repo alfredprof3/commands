@@ -1,4 +1,4 @@
-# Install
+# Install Aircrack-ng
 apt install autoconf \
 automake \
 libtool \
