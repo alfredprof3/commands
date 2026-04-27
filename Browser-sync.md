@@ -1,15 +1,13 @@
-A command line tool use for web development. Refresh your browser after save it.
+# Browser-sync.
 
-# Install
+1. Install
 
-`$ npm install -g browser-sync`
+npm install -g browser-sync
 
-# Usage
+2. Usage
 
-Start a server with on a specify directory, port, browser and watch files changes.
+browser-sync start --server /home/xuser/Web --watch /home/xuser/Web/* --browser firefox --port 3000
 
-`$ browser-sync start --server /home/xuser/Web --watch /home/xuser/Web/* --browser firefox --port 3000`
+## Run a simple local server (use your cwd as the web root)
 
-Run a simple local server (use your cwd as the web root)
-
-`$ browser-sync start --server`
+browser-sync start --server
