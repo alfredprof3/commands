@@ -1,4 +1,4 @@
-# How to create customs scripts 
+# How to create customs commands
 
 And execute as commands keeping them in a custom directory
 
