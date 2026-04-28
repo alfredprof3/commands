@@ -12,13 +12,15 @@ The command listed below show us the installed packages performed by the user.
 `comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)`
 
 ## Enable / Disable feedback password for terminal
-To disable password feedback (asterisks `****`) in Linux, remove or comment out the pwfeedback option in the sudoers file. The most effective methods are removing /etc/sudoers.d/pwfeedback, renaming it, or editing /etc/sudoers with visudo to delete ,pwfeedback from the defaults line.
+To disable password feedback (asterisks `****`) in Linux, remove or comment out the pwfeedback option in the sudoers file. The most effective methods are removing `/etc/sudoers.d/pwdfeedback` renaming it, or editing `/etc/sudoers` with `visudo` to delete `,pwdfeedback` from the defaults line.
 
 ### Disable
 
 #### METHOD 1. Remove/Rename the Sudoers File
 
-sudo mv /etc/sudoers.d/pwfeedback /etc/sudoers.d/pwfeedback.disabled
+```sh
+sudo mv /etc/sudoers.d/pwdfeedback /etc/sudoers.d/pwdfeedback.disabled
+```
 
 Alternative, if that file does not exist, look for `/etc/sudoers.d/0pwfeedback` and remove it.
 
