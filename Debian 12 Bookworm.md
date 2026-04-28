@@ -1,63 +1,51 @@
-# Installing a clean and simply desktop environment
+# Clean installation with desktop environment
 
-`$ sudo apt install gnome-session gnome-shell gnome-backgrounds gnome-applets gnome-control-center mutter gjs gnome-terminal` 
+sudo apt install gnome-session gnome-shell gnome-backgrounds gnome-applets gnome-control-center mutter gjs gnome-terminal
 
-This will perform a very lightweight desktop system and environment.
+This performs a very lightweight desktop system and environment.
 
-# Gnome Terminal
-
-Terminal emulator for Gnome desktop environment. Terminal customization colors and fonts placed in [[Dconf Gnome Terminal | .dconf]]
-
-# List manually installed packages
-
+## List manually installed packages
 The command listed below show us the installed packages performed by the user.
 
-`$ comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)`
+comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
-# Enable / Disable feedback password from terminal
+## Enable / Disable feedback password for terminal
+To disable password feedback (asterisks `****`) in Linux, remove or comment out the pwfeedback option in the sudoers file. The most effective methods are removing /etc/sudoers.d/pwfeedback, renaming it, or editing /etc/sudoers with visudo to delete ,pwfeedback from the defaults line.
 
-## Enable feedback
+### METHOD 1. Remove/Rename the Sudoers File
 
-### Option 1
+sudo mv /etc/sudoers.d/pwfeedback /etc/sudoers.d/pwfeedback.disabled
 
-To enable the feedback password and see the asterisk when typing your root or sudo passkey, you need to make a few changes.
+Alternative, if that file does not exist, look for `/etc/sudoers.d/0pwfeedback` and remove it.
 
-1. Type the following command. It will depends it which user you're in
-	
-	**Normal User**
-	```bash
-	sudo visudo
-	```
+### METHOD 2: Edit sudoers via visudo
 
-	**Root User**
-	```bash
-	visudo
-	```
+1. Open the editor.
 
-2. Add `pwfeedback` at line 9. It should look like this your `sudoers` file.
+- Normal user
 
-	**Option 1**
-	```bash
-	Defaults   env_reset,pwfeedback
-	```
+sudo visudo
 
-	**Option 2**
-	```bash
-	Defaults   env_reset
-	Defaults   pwfeedback
-	```
+- Root user
 
-3. Save the file and now you can type, you will see an asterisks while typing your password.
+visudo
+
+2. Add `pwfeedback` at line 9.
+
+- Option 1
+
+Defaults   env_reset,pwfeedback
+
+- Option 2
+
+Defaults   env_reset
+Defaults   pwfeedback
+
+3. Save the file. Now you can type, you will see an asterisks while typing your password.
 
 ### Additional 
 
 You can create a file called `pwfeedback` and write `Defaults   pwfeedback` inside.
-
-## Disable feedback password from terminal
-
-To disable the feedback just erase the `pwdfeedback` file located in `/etc/sudoers.d/pwfeedback` or change the name. 
-
-Also you can comment the line wrote in the `sudoers` file.
 
 # Change default web browser
 
