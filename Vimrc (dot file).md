@@ -1,6 +1,7 @@
 # Vimrc - Configuration file
 
 ## Option 1
+
 " URL: https://vim.wikia.com/wiki/Example_vimrc
 " Authors: https://vim.wikia.com/wiki/Vim_on_Libera_Chat
 " Description: A minimal, but feature rich, example .vimrc. If you are a
@@ -21,14 +22,10 @@ set nocompatible
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
-if has('filetype')
-  filetype indent plugin on
-endif
+filetype plugin indent on
 
 " Enable syntax highlighting
-if has('syntax')
-  syntax on
-endif
+syntax on
 
 "------------------------------------------------------------
 " Must have options {{{1
@@ -116,9 +113,7 @@ set visualbell
 set t_vb=
 
 " Enable use of the mouse for all modes
-if has('mouse')
-  set mouse=a
-endif
+set mouse=a
 
 " Set the command window height to 2 lines, to avoid many cases of having to
 " "press <Enter> to continue"
@@ -164,7 +159,6 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-"------------------------------------------------------------
 " ==========================================
 " AlfredXuser configurations
 " ==========================================
@@ -216,18 +210,14 @@ set encoding=UTF-8
 " Load the plugins
 packloadall
 
-" Colorscheme for Vim
-set background=dark
-"colorscheme iceberg
-
 " Airline for Vim
-let g:airline_section_c = '🐛 %F 🐣'
+let g:airline_section_c = '🐶 %F 🐣'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-"let g:airline_theme = 'gentooish'
+" let g:airline_theme = 'biogoo'
 
 " unicode symbols
 let g:airline_left_sep = '»'
@@ -269,3 +259,38 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " CSS Complete
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
+
+" NERDCommenter
+
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
+
+" Colorscheme for Vim
+set background=dark
+" colorscheme papilio_dehaanii
+colorscheme nightfly
+" colorscheme omni
