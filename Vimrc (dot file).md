@@ -1,7 +1,6 @@
-Configuration file for Vim with plugins and user configurations
+# Vimrc - Configuration file
 
-###### Option 1
-```bash
+## Option 1
 " URL: https://vim.wikia.com/wiki/Example_vimrc
 " Authors: https://vim.wikia.com/wiki/Vim_on_Libera_Chat
 " Description: A minimal, but feature rich, example .vimrc. If you are a
@@ -270,4 +269,3 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " CSS Complete
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
-```
