@@ -1,50 +1,43 @@
-How to create customs scripts to execute as commands keeping them in a custom directory
+# How to create customs scripts 
 
-### Create the directory
+And execute as commands keeping them in a custom directory
+
+## Define the directory
+Define the folder or directory where the scripts commands are going to alocate.
 
 1. Create a directory to store scripts and commands
 
-```bash
 mkdir Scripts
-```
 
 2. Open the `.bashrc` file
 
-```bash
 vim .bashrc
-```
 
 3. Add the following code
 
-```bash
 export PATH=$PATH":$HOME/Scripts"
-```
 
 3. Reload .bashrc
 
-`$ source .bashrc`
+source .bashrc
 
----
-
-### Creating scripts
+## Creating scripts
+Create the file with you preferred editor and save it with a custom file name.
 
 1. Create the sh file
 
-`$ vim Scripts/file.sh`
+vim Scripts/file.sh
 
-2. Write the script
+2. Write the script and save it
 
-```bash
 #!/bin/bash
 apt update
-```
 
 3. Give permissions
 
-`$ chmod 755 file`
+chmod 755 file
 
----
+## Creating a soft link
+This will give us the posibility to execute as a normal command.
 
-### Creating a soft link to execute as a normal command
-
-`$ sudo ln -s /home/xuser/Scripts/file /usr/bin/file`
+sudo ln -s /home/USER/Scripts/file /usr/bin/file
