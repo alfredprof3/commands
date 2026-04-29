@@ -1,14 +1,14 @@
 # Clean installation with desktop environment
 
-`sudo apt install gnome-session gnome-shell gnome-backgrounds gnome-applets gnome-control-center mutter gjs gnome-terminal`
+sudo apt install gnome-session gnome-shell gnome-backgrounds gnome-applets gnome-control-center mutter gjs gnome-terminal
 
 # List manually installed packages. The command listed below show us the installed packages performed by the user.
 
-`comm -23 <(apt-mark showmanual | sort u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)`
+comm -23 <(apt-mark showmanual | sort u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
 # DISABLE - METHOD 1. Feedback password
 
-`sudo mv /etc/sudoers.d/pwdfeedback /etc/sudoers.d/pwdfeedback.disabled`
+sudo mv /etc/sudoers.d/pwdfeedback /etc/sudoers.d/pwdfeedback.disabled
 
 # DISABLE - METHOD 2. Feedback password
 
