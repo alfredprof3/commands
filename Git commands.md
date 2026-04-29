@@ -1,8 +1,11 @@
 # Git
 
 1. Installation
+
 ## Linux
+
 Debian/Ubuntu distributions
+
 ###### Normal User
 ```bash
 sudo apt install git
