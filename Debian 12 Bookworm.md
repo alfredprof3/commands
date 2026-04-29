@@ -1,13 +1,15 @@
-Clean installation with desktop environment
-
 ```sh
+# Clean installation with desktop environment
+
 sudo apt install gnome-session gnome-shell gnome-backgrounds gnome-applets gnome-control-center mutter gjs gnome-terminal
+
+# List manually installed packages. The command listed below show us the installed packages performed by the user.
+
+comm -23 <(apt-mark showmanual | sort u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 ```
 
-List manually installed packages. The command listed below show us the installed packages performed by the user.
 
 ```sh
-comm -23 <(apt-mark showmanual | sort u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 ```
 
 DISABLE - METHOD 1. Feedback password
