@@ -7,24 +7,23 @@ List manually installed packages. The command listed below show us the installed
 DISABLE - METHOD 1. Feedback password
 # sudo mv /etc/sudoers.d/pwdfeedback /etc/sudoers.d/pwdfeedback.disabled
 
-# DISABLE - METHOD 2. Feedback password
+DISABLE - METHOD 2. Feedback password
 
 1. Open the editor.
-
-sudo visudo
+# sudo visudo
 or
-visudo
+# visudo
 
 2. Search the line containing `pwdfeedback` and delete it.
 
 - Option 1
 
-Defaults   env_reset~~,pwfeedback~~
+# Defaults   env_reset~~,pwfeedback~~
 
 - Option 2
 
-Defaults   env_reset
-~~Defaults   pwfeedback~~
+# Defaults   env_reset
+# ~~Defaults   pwfeedback~~
 
 3. Save the file.
 
