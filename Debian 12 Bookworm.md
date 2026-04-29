@@ -29,9 +29,30 @@ Defaults   env_reset~~,pwfeedback~~
 Defaults   env_reset
 ~~Defaults   pwfeedback~~
 
-3. Save the file. Now you can type, you will see an asterisks while typing your password.
+3. Save the file.
 
-# Enable
+# ENABLE. Feedback password
+
+1. Open the editor.
+
+sudo visudo
+or
+visudo
+
+2. Find the line.
+
+Defaults   env_reset
+
+3. Add the `pwdfeedback`
+
+- Option 1
+
+Defaults   env_reset,pwfeedback
+
+- Option 2
+
+Defaults   env_reset
+Defaults   pwfeedback
 
 # Change default web browser
 
