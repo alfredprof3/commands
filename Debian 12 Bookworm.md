@@ -26,10 +26,8 @@ Defaults   env_reset~~,pwfeedback~~
 
 - Option 2
 
-```bash
-Defaults   env_reset
-~~Defaults   pwfeedback~~
-```
+`Defaults   env_reset`
+`~~Defaults   pwfeedback~~`
 
 3. Save the file.
 
@@ -53,10 +51,8 @@ Defaults   env_reset,pwfeedback
 
 - Option 2
 
-```bash
-Defaults   env_reset
-Defaults   pwfeedback
-```
+`Defaults   env_reset`
+`Defaults   pwfeedback`
 
 # Change default web browser
 
