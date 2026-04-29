@@ -1,5 +1,6 @@
 # Git
-# 1. Installation
+
+1. Installation
 ## Linux
 Debian/Ubuntu distributions
 ###### Normal User
