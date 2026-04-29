@@ -1,4 +1,3 @@
-```sh
 # Clean installation with desktop environment
 
 sudo apt install gnome-session gnome-shell gnome-backgrounds gnome-applets gnome-control-center mutter gjs gnome-terminal
@@ -6,17 +5,10 @@ sudo apt install gnome-session gnome-shell gnome-backgrounds gnome-applets gnome
 # List manually installed packages. The command listed below show us the installed packages performed by the user.
 
 comm -23 <(apt-mark showmanual | sort u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
-```
 
+# DISABLE - METHOD 1. Feedback password
 
-```sh
-```
-
-DISABLE - METHOD 1. Feedback password
-
-```sh
 sudo mv /etc/sudoers.d/pwdfeedback /etc/sudoers.d/pwdfeedback.disabled
-```
 
 # DISABLE - METHOD 2. Feedback password
 
@@ -34,8 +26,8 @@ Defaults   env_reset~~,pwfeedback~~
 
 - Option 2
 
-`Defaults   env_reset`
-`~~Defaults   pwfeedback~~`
+Defaults   env_reset
+~~Defaults   pwfeedback~~
 
 3. Save the file.
 
@@ -59,8 +51,8 @@ Defaults   env_reset,pwfeedback
 
 - Option 2
 
-`Defaults   env_reset`
-`Defaults   pwfeedback`
+Defaults   env_reset
+Defaults   pwfeedback
 
 # Change default web browser
 
