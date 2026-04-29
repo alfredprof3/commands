@@ -22,7 +22,7 @@ visudo
 
 - Option 1
 
-Defaults   env_reset~,pwfeedback~
+Defaults   env_reset ~,pwfeedback~
 
 - Option 2
 
