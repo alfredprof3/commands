@@ -1,7 +1,4 @@
-Git
-Free and open source version control system designed to handle everything from small to very large projects with speed and efficiency.
-
-Before we start using Git, we need to setup a couple of steps. First, install Git in the computer and configure a user name with an email.
+# Git
 # 1. Installation
 ## Linux
 Debian/Ubuntu distributions
