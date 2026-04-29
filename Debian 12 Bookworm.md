@@ -6,31 +6,23 @@ sudo apt install gnome-session gnome-shell gnome-backgrounds gnome-applets gnome
 
 comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
-# DISABLE feedback password - METHOD 1. 
-
-Feedback password (asterisks `****`) in Linux. The most effective methods are removing `/etc/sudoers.d/pwdfeedback` renaming it, or editing `/etc/sudoers` with `visudo` to delete `,pwdfeedback` from the defaults line.
+# DISABLE - METHOD 1. Feedback password
 
 sudo mv /etc/sudoers.d/pwdfeedback /etc/sudoers.d/pwdfeedback.disabled
 
-Alternative, if that file does not exist, look for `/etc/sudoers.d/0pwfeedback` and remove it.
-
-#### METHOD 2: Edit sudoers via visudo
+# DISABLE - METHOD 2. Feedback password
 
 1. Open the editor.
 
-- Normal user
-
 sudo visudo
-
-- Root user
-
+or
 visudo
 
 2. Search the line containing `pwdfeedback` and delete it.
 
 - Option 1
 
-Defaults   env_reset,pwfeedback
+Defaults   env_reset-,pwfeedback-
 
 - Option 2
 
@@ -39,21 +31,7 @@ Defaults   pwfeedback
 
 3. Save the file. Now you can type, you will see an asterisks while typing your password.
 
-### Enable
-
-1. Open the editor.
-
-- Normal user
-
-sudo visudo
-
-- Root user
-
-visudo
-
-### Additional 
-
-You can create a file called `pwfeedback` and write `Defaults   pwfeedback` inside.
+# Enable
 
 # Change default web browser
 
