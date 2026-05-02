@@ -179,7 +179,13 @@ set relativenumber
 set scrolloff=10
 
 " Clipboard; Ctrl C in visual mode to copy
-vnoremap <C-c> "+y
+"vnoremap <C-c> "+y
+
+" Copy to Android clipboard in Visual mode
+vnoremap <C-c> :w !termux-clipboard-set<CR><CR>
+
+" Paste from Android clipboard in Normal mode
+nnoremap <C-v> :read !termux-clipboard-get<CR>
 
 " Syntax complete
 set omnifunc=syntaxcomplete#Complete
