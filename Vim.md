@@ -1,18 +1,12 @@
-Is a text editor that is upwards compatible to Vi.  It can be used to edit all kinds of plain text.  It is especially useful for editing programs
+# Vim installation
 
-### Installation
+Installation
 
-`$ sudo apt install vim-gtk3`
+sudo apt install vim-gtk3
 
-or
+Usage
 
-`$ sudo apt install vim`
-
-### Usage
-
-Open vim
-
-`$ vim`
+vim
 
 Create a new file
 
@@ -51,3 +45,12 @@ Increase/reduce the height:
 
 Reset the width and height of windows:
 \<C-w> =
+
+Plugins
+
+nerdtree
+nightfly-theme
+omni-theme
+vim-airline
+vim-devicons
+visual-multi
