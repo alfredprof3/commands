@@ -7,6 +7,7 @@ sudo apt install vim-gtk3
 ```
 
 2. Usage
+
 Initialize vim and open the editor
 
 ```bash
