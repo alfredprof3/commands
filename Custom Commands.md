@@ -29,13 +29,14 @@ export PATH=$PATH":$HOME/Scripts"
 
 4. Reload .bashrc
 
-```bash
-# macOS (.zshrc)
-source ~/.zshrc
-```
+- macOS (.zshrc)
 
 ```bash
-# Linux (.bashrc)
+source ~/.zshrc
+```
+- Linux (.bashrc)
+
+```bash
 source ~/.bashrc
 ```
 
