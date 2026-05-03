@@ -79,3 +79,16 @@ for dir in ~/.vim/pack/plug-ins/start/*/; do
   git -C "$dir" pull
 done
 ```
+# Download plugins script
+
+```bash
+#!/bin/bash
+
+echo "Type the Github URL"
+read github
+
+echo "Type the folder name"
+read dirName
+
+git clone --depth=1 $github ~/.vim/pack/plug-ins/start/$dirName/
+```
