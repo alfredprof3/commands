@@ -2,7 +2,6 @@
 
 And execute as commands keeping them in a custom directory
 
-## Define the directory
 Define the folder or directory where the scripts commands are going to alocate.
 
 1. Create a directory to store scripts and commands
@@ -17,11 +16,10 @@ vim .bashrc
 
 export PATH=$PATH":$HOME/Scripts"
 
-3. Reload .bashrc
+4. Reload .bashrc
 
 source .bashrc
 
-## Creating scripts
 Create the file with you preferred editor and save it with a custom file name.
 
 1. Create the sh file
