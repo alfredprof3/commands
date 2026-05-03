@@ -27,7 +27,7 @@ export PATH="$HOME/Public/scripts:$PATH"
 export PATH=$PATH":$HOME/Scripts"
 ```
 
-4. Reload .bashrc
+4. Reload the configuration
 
 - macOS (.zshrc)
 
