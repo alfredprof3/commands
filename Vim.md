@@ -1,15 +1,17 @@
 # Vim installation
 
-## Installation
+1. Installation
 
 ```bash
-# Install vim
 sudo apt install vim-gtk3
 ```
 
-## Usage
+2. Usage
+Initialize vim and open the editor
 
+```bash
 vim
+```
 
 Create a new file
 
