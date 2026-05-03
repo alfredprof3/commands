@@ -16,13 +16,14 @@ vim .bashrc
 
 3. Add the following code
 
-```bash
-# macOS (.zshrc)
-export PATH="$HOME/Public/scripts:$PATH"
-```
+- macOS (.zshrc)
 
 ```bash
-# Linux (.bashrc)
+export PATH="$HOME/Public/scripts:$PATH"
+```
+- Linux (.bashrc)
+
+```bash
 export PATH=$PATH":$HOME/Scripts"
 ```
 
