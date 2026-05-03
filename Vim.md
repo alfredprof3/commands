@@ -1,26 +1,28 @@
 # Vim installation
 
-1. Installation
+- Installation
 
 ```bash
 sudo apt install vim-gtk3
 ```
 
-2. Usage
-
-Initialize vim and open the editor
+- Usage
 
 ```bash
 vim
 ```
 
-Create a new file
+- Creating a new file with Vim
 
-`$ vim newFile.txt`
+```bash
+vim newFile.txt
+```
 
-Open an existing file
+- Open an existing file
 
-`$ vim file.txt`
+```bash
+vim file.txt
+```
 
 **Command Mode** Open a file:
 
