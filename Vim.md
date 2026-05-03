@@ -54,18 +54,25 @@ Increase/reduce the height:
 Reset the width and height of windows:
 \<C-w> =
 
-Plugins
-- airline
-- auto-pairs
-- closetag
-- devicons
-- nerdcommenter
-- nerdtree
-- nightfly-theme
-- omni-theme
-- papilio_dehaanii-theme
-- vim-surround
-- visual-multi
+# Vim Plugins
+- [auto pairs](https://github.com/jiangmiao/auto-pairs)
+- [vim-closetag](https://github.com/alvan/vim-closetag)
+- [vim Completes Me](https://github.com/vim-scripts/VimCompletesMe)
+- [css complete](https://github.com/othree/csscomplete.vim)
+- [emmet](https://github.com/mattn/emmet-vim)
+- [nerdcommenter](https://github.com/preservim/nerdcommenter)
+- [nerdtree](https://github.com/preservim/nerdtree)
+- [vim airline](https://github.com/vim-airline/vim-airline)
+- [vim devicons](https://github.com/ryanoasis/vim-devicons)
+- [vim surround](https://github.com/tpope/vim-surround) or [vim sandwich](https://github.com/machakann/vim-sandwich)
+- [vim visual multi](https://github.com/mg979/vim-visual-multi)
+- [vim snippets](https://github.com/honza/vim-snippets) or [UltiSnips](https://github.com/sirver/ultisnips)
+- [html5](https://github.com/othree/html5.vim)
+
+# Vim Colorschemes
+- [Papilio Dehaanii](https://github.com/keiyakeiya/PapilioDehaanii.vim)
+- [Nightfly](https://github.com/bluz71/vim-nightfly-colors)
+- [Omni](https://github.com/yonlu/omni.vim)
 
 # Update Vim plugins
 
