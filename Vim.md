@@ -62,3 +62,20 @@ omni-theme
 vim-airline
 vim-devicons
 visual-multi
+
+# Update Vim plugins
+
+METHOD 1. With one single command
+
+```bash
+find ~/.vim/pack/plug-ins/start/ -maxdepth 1 -mindepth 1 -type d -exec git -C {} pull \;
+```
+
+METHOD 2. A for loop bash script
+
+```bash
+for dir in ~/.vim/pack/plug-ins/start/*/; do
+  echo "Updating $(basename $dir)..."
+  git -C "$dir" pull
+done
+```
