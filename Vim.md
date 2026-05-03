@@ -1,6 +1,6 @@
 # Vim installation
 
-_Installation_
+Install
 
 ```bash
 sudo apt install vim-gtk3
@@ -24,11 +24,11 @@ Open an existing file
 vim file.txt
 ```
 
-**Command Mode** Open a file:
+Open a file in Normal Mode:
 
 `:open Scripts/text.sh`
 
-### Keyboard
+# Keyboard
 
 Split screen vertical:
 \<C-w>v
