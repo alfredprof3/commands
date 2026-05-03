@@ -1,6 +1,7 @@
 # Vim installation
 
 1. Installation
+
 ```bash
 sudo apt install vim-gtk3
 ```
