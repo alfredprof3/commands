@@ -6,7 +6,9 @@ Define the folder or directory where the scripts commands are going to alocate.
 
 1. Create a directory to store scripts and commands
 
+```bash
 mkdir Scripts
+```
 
 2. Open the `.bashrc` file
 
@@ -14,11 +16,27 @@ vim .bashrc
 
 3. Add the following code
 
+```bash
+# macOS (.zshrc)
+export PATH="$HOME/Public/scripts:$PATH"
+```
+
+```bash
+# Linux (.bashrc)
 export PATH=$PATH":$HOME/Scripts"
+```
 
 4. Reload .bashrc
 
-source .bashrc
+```bash
+# macOS (.zshrc)
+source ~/.zshrc
+```
+
+```bash
+# Linux (.bashrc)
+source ~/.bashrc
+```
 
 Create the file with you preferred editor and save it with a custom file name.
 
