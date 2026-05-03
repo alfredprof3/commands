@@ -55,12 +55,16 @@ Reset the width and height of windows:
 \<C-w> =
 
 Plugins
-
+- airline
+- auto-pairs
+- closetag
+- devicons
+- nerdcommenter
 - nerdtree
 - nightfly-theme
 - omni-theme
-- vim-airline
-- vim-devicons
+- papilio_dehaanii-theme
+- vim-surround
 - visual-multi
 
 # Update Vim plugins
