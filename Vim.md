@@ -42,7 +42,7 @@ Move to the left, right, up and down window:
 \<C-w>k
 \<C-w>j
 
-**Increase o reduce windows size in vim**
+Increase o reduce windows size in Vim
 Increase/reduce the width:
 \<C-w> >
 \<C-w> <
@@ -56,12 +56,12 @@ Reset the width and height of windows:
 
 Plugins
 
-nerdtree
-nightfly-theme
-omni-theme
-vim-airline
-vim-devicons
-visual-multi
+- nerdtree
+- nightfly-theme
+- omni-theme
+- vim-airline
+- vim-devicons
+- visual-multi
 
 # Update Vim plugins
 
