@@ -1,24 +1,24 @@
 # Vim installation
 
-- Installation
+Installation
 
 ```bash
 sudo apt install vim-gtk3
 ```
 
-- Usage
+Usage
 
 ```bash
 vim
 ```
 
-- Creating a new file with Vim
+Creating a new file with Vim
 
 ```bash
 vim newFile.txt
 ```
 
-- Open an existing file
+Open an existing file
 
 ```bash
 vim file.txt
