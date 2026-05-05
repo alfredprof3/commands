@@ -116,7 +116,7 @@ set t_vb=
 set mouse=a
 
 " Set the command window height to 2 lines, to avoid many cases of having to
-" "press <Enter> to continue"
+" press <Enter> to continue
 set cmdheight=2
 
 " Display line numbers on the left
@@ -159,9 +159,7 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-" ==========================================
-" AlfredXuser configurations
-" ==========================================
+" ──────── alfredxuser config ────────────────────────
 
 " Map leader key
 let mapleader=','
@@ -178,14 +176,44 @@ set relativenumber
 " Good scrolling
 set scrolloff=10
 
-" Clipboard; Ctrl C in visual mode to copy
+" Clipboard; Ctrl C in visual mode to copy for Linux/PC
 "vnoremap <C-c> "+y
 
-" Copy to Android clipboard in Visual mode
-vnoremap <C-c> :w !termux-clipboard-set<CR><CR>
+" ── Clipboard Settings ──────────────────────────────────────────
 
-" Paste from Android clipboard in Normal mode
-nnoremap <C-v> :read !termux-clipboard-get<CR>
+if has('macunix')
+  " ── macOS ────────────────────────────────────────────────────
+  set clipboard=unnamed
+
+  " vnoremap <C-c> y:call system('pbcopy', @")<CR>
+  vnoremap <C-c> :w !pbcopy<CR><CR>
+  nnoremap <C-v> :read !pbpaste<CR>
+
+elseif executable('termux-clipboard-set')
+  " ── Termux (Android) ─────────────────────────────────────────
+  vnoremap <C-c> :w !termux-clipboard-set<CR><CR>
+  nnoremap <C-v> :read !termux-clipboard-get<CR>
+
+elseif has('unix')
+  " ── Linux ────────────────────────────────────────────────────
+  if executable('xclip')
+    set clipboard=unnamedplus
+    vnoremap <C-c> y:call system('xclip -selection clipboard', @")<CR>
+    nnoremap <C-v> :read !xclip -selection clipboard -o<CR>
+  elseif executable('xsel')
+    set clipboard=unnamedplus
+    vnoremap <C-c> y:call system('xsel --clipboard --input', @")<CR>
+    nnoremap <C-v> :read !xsel --clipboard --output<CR>
+  endif
+
+elseif has('win32') || has('win64')
+  " ── Windows ──────────────────────────────────────────────────
+  set clipboard=unnamed
+  vnoremap <C-c> y:call system('clip', @")<CR>
+  nnoremap <C-v> :read !powershell.exe -command Get-Clipboard<CR>
+
+endif
+" ── Clipboard Settings ──────────────────────────────────────────
 
 " Syntax complete
 set omnifunc=syntaxcomplete#Complete
@@ -205,27 +233,34 @@ set termguicolors
 
 " Encoding for display icons
 set encoding=UTF-8
+set termencoding=utf-8
+
+" Disable automatic comment continuation on new lines
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Use Tab and Shift-Tab to cycle through buffers
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
+" Close the current buffer but keep Vim open
+nnoremap <Leader>d :bd<CR>
 
 " GUI font (NordFont)
 "set guifont=DejaVu\ Sans\ Mono\ 16
 
-" ==========================================
-" PLUGINS
-" ==========================================
-
-" Load the plugins
+" ──────── Plugins ───────────────────────────────────
 packloadall
 
 " Airline for Vim
+" ──────── Airline status bar ─────────────────────────────────
 let g:airline_section_c = '🐶 %F 🐣'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-" let g:airline_theme = 'biogoo'
 
-" unicode symbols
+" ──────── Unicode Symbols ───────────────────────────────────
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
@@ -239,7 +274,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" airline symbols
+" ──────── Airline Symbols ───────────────────────────────────
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -247,27 +282,18 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
-
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = ''
-
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = ''
 
-" NERDTree
+" ──────── NERDTree ───────────────────────────────────
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
+nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" Emmet
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
-" CSS Complete
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
-
-" NERDCommenter
-
+" ──────── NERDCommenter ───────────────────────────────────
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
 
@@ -295,7 +321,13 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
-" Colorscheme for Vim
+" ──────── Emmet ───────────────────────────────────
+imap <expr> <leader><tab> emmet#expandAbbrIntelligent("\<tab>")
+
+" ──────── CSS Complete ───────────────────────────────────
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
+
+" ──────── Colorscheme ───────────────────────────────────
 set background=dark
 " colorscheme papilio_dehaanii
 colorscheme nightfly
