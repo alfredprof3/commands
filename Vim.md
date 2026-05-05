@@ -31,16 +31,16 @@ Open a file in Normal Mode:
 # Keyboard
 
 Split screen vertical:
-\<C-w>v
+- \<C-w>v
 
 Split screen at bottom
 \<C-w>s
 
 Move to the left, right, up and down window:
-\<C-w>l
-\<C-w>h
-\<C-w>k
-\<C-w>j
+- \<C-w>l
+- \<C-w>h
+- \<C-w>k
+- \<C-w>j
 
 Increase o reduce windows size in Vim
 Increase/reduce the width:
