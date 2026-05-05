@@ -34,7 +34,7 @@ Split screen vertical:
 `<C-w>v`
 
 Split screen at bottom
-<C-w>s
+`<C-w>s`
 
 Move to the left, right, up and down window:
 `<C-w>l`
