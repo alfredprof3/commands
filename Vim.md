@@ -50,17 +50,20 @@ Move up window:
 Move down window:
 `<C-w>j`
 
-Increase o reduce windows size in Vim
-Increase/reduce the width:
-\<C-w> >
-\<C-w> <
+Increase windows size
+`<C-w> >`
 
-Increase/reduce the height:
-\<C-w> +
-\<C-w> -
+Reduce windows size
+`<C-w> <`
+
+Increase height
+`<C-w> +`
+
+Reduce height
+`<C-w> -`
 
 Reset the width and height of windows:
-\<C-w> =
+`<C-w> =`
 
 # Vim Plugins
 - [auto pairs](https://github.com/jiangmiao/auto-pairs)
