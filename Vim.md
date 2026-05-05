@@ -26,7 +26,9 @@ vim file.txt
 
 Open a file in Normal Mode:
 
-`:open Scripts/text.sh`
+```vim
+:open Scripts/text.sh
+```
 
 # Keyboard
 
@@ -36,11 +38,17 @@ Split screen vertical:
 Split screen at bottom
 `<C-w>s`
 
-Move to the left, right, up and down window:
+Move to the left window:
 `<C-w>l`
-<C-w>h
-<C-w>k
-<C-w>j
+
+Move to the right window:
+`<C-w>h`
+
+Move up window:
+`<C-w>k`
+
+Move down window:
+`<C-w>j`
 
 Increase o reduce windows size in Vim
 Increase/reduce the width:
