@@ -1,10 +1,10 @@
-# Vimrc - Configuration file
+# Vimrc
 
 ## Option 1
 
-" URL: https://vim.wikia.com/wiki/Example_vimrc
-" Authors: https://vim.wikia.com/wiki/Vim_on_Libera_Chat
-" Description: A minimal, but feature rich, example .vimrc. If you are a
+" URL https://vim.wikia.com/wiki/Example_vimrc
+" Authors https://vim.wikia.com/wiki/Vim_on_Libera_Chat
+" Description A minimal, but feature rich, example .vimrc. If you are a
 "              newbie, basing your first .vimrc on this file is a good choice.
 "              If you're a more advanced user, building your own .vimrc based
 "              on this file is still a good idea.
@@ -179,8 +179,7 @@ set scrolloff=10
 " Clipboard; Ctrl C in visual mode to copy for Linux/PC
 "vnoremap <C-c> "+y
 
-" ── Clipboard Settings ──────────────────────────────────────────
-
+" ──────── Clipboard Settings ──────────────────────────────────────────
 if has('macunix')
   " ── macOS ────────────────────────────────────────────────────
   set clipboard=unnamed
@@ -213,7 +212,7 @@ elseif has('win32') || has('win64')
   nnoremap <C-v> :read !powershell.exe -command Get-Clipboard<CR>
 
 endif
-" ── Clipboard Settings ──────────────────────────────────────────
+" ──────── Clipboard Settings ──────────────────────────────────────────
 
 " Syntax complete
 set omnifunc=syntaxcomplete#Complete
@@ -248,11 +247,11 @@ nnoremap <Leader>d :bd<CR>
 " GUI font (NordFont)
 "set guifont=DejaVu\ Sans\ Mono\ 16
 
-" ──────── Plugins ───────────────────────────────────
+" ──────── Plugins ───────────────────────────────────────────
 packloadall
 
 " Airline for Vim
-" ──────── Airline status bar ─────────────────────────────────
+" ──────── Airline status bar ────────────────────────────────
 let g:airline_section_c = '🐶 %F 🐣'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -287,7 +286,7 @@ let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = ''
 
-" ──────── NERDTree ───────────────────────────────────
+" ──────── NERDTree ────────────────────────────────────────
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
@@ -321,13 +320,13 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
-" ──────── Emmet ───────────────────────────────────
+" ──────── Emmet ──────────────────────────────────────────
 imap <expr> <leader><tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " ──────── CSS Complete ───────────────────────────────────
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 
-" ──────── Colorscheme ───────────────────────────────────
+" ──────── Colorscheme ────────────────────────────────────
 set background=dark
 " colorscheme papilio_dehaanii
 colorscheme nightfly
