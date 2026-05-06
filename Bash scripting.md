@@ -23,3 +23,14 @@ echo "Your current working directory is -> $var"
 
 > [!NOTE]
 > Is important to type the command inside ˋ ˋ
+
+# Example. Update vim plugins
+
+```bash
+#!/bin/bash
+
+for dir in ~/.vim/pack/plug-ins/start/*/; do
+  echo "Updating $(basename $dir)..."
+  git -C "$dir" pull
+done
+```
