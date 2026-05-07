@@ -34,3 +34,30 @@ for dir in ~/.vim/pack/plug-ins/start/*/; do
   git -C "$dir" pull
 done
 ```
+
+# Music Downloader using Yt-dlp
+
+```bash
+#!/bin/bash
+
+echo -e "Yt-dlp music downloader. \nType YouTube ID tag"
+read id
+
+echo -e "\nFile format:"; echo "1) MP3"; echo "2) WAV"
+read input
+
+case $input in
+    1)
+        mp3() {
+            yt-dlp --extract-audio --audio-format mp3 --audio-quality 320K https://www.youtube.com/watch?v=$id
+        }
+        mp3
+        ;;
+    2)
+        wav() {
+            yt-dlp --extract-audio --audio-format wav https://www.youtube.com/watch?v=$id
+        }
+        wav
+        ;;
+esac
+```
