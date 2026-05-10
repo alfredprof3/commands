@@ -321,7 +321,7 @@ let g:NERDToggleCheckAllLines = 1
 " ──────── Emmet ──────────────────────────────────────────
 imap <expr> <leader><tab> emmet#expandAbbrIntelligent("\<tab>")
 
-" ──────── CSS Complete ───────────────────────────────────
+" ──────── CSS Complete ────────────────────
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 
 " ──────── Colorscheme ─────────────────────
