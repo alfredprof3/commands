@@ -61,3 +61,16 @@ case $input in
         ;;
 esac
 ```
+
+# Vim plugins - Download and Install
+```bash
+#!/bin/bash
+
+echo "Type the Github URL"
+read github
+
+echo "Type the folder name"
+read dirName
+
+git clone --depth=1 $github ~/.vim/pack/plug-ins/start/$dirName/
+```
