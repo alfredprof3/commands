@@ -324,7 +324,7 @@ imap <expr> <leader><tab> emmet#expandAbbrIntelligent("\<tab>")
 " ──────── CSS Complete ───────────────────────────────────
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 
-" ──────── Colorscheme ────────────────────────────────────
+" ──────── Colorscheme ─────────────────────
 set background=dark
 " colorscheme papilio_dehaanii
 colorscheme nightfly
