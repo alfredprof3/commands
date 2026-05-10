@@ -1,3 +1,19 @@
+# Notes
+
+## 05-10-2026, Sunday
+
+### Command line markdown viewers
+
+https://codeberg.org/johann1764/smd
+https://github.com/visit1985/mdp
+https://github.com/charrismatic/mandown
+https://github.com/textualize/frogmouth
+https://github.com/avilum/busymd
+https://github.com/Inlyne-Project/inlyne
+
+### Pass git helper
+https://github.com/languitar/pass-git-helper
+
 ## 23-02-2025, Sunday
 - entry
 ## 15-02-2025, Saturday
