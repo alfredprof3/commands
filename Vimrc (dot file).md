@@ -157,7 +157,7 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-" ──────── alfredxuser config ────────────────────────
+" ──────── alfredxuser config ───────────────────────────
 
 " Map leader key
 let mapleader=','
@@ -321,10 +321,31 @@ let g:NERDToggleCheckAllLines = 1
 " ──────── Emmet ──────────────────────────────────────────
 imap <expr> <leader><tab> emmet#expandAbbrIntelligent("\<tab>")
 
-" ──────── CSS Complete ────────────────────
+" ──────── CSS Complete ───────────────────────────────────
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 
-" ──────── Colorscheme ─────────────────────
+" ── Section Header Formatter ────────────────────────────────────
+function! FormatSectionHeader()
+  let l:total_width = 57        " Your desired total line width
+  let l:prefix      = '" ──────── '
+  let l:line        = getline('.')
+
+  " Strip existing formatting, keep only the title text
+  let l:title = substitute(l:line, '^"\s*─*\s*', '', '')
+  let l:title = substitute(l:title, '\s*─*\s*$', '', '')
+
+  " Build the new line and calculate remaining hyphens
+  let l:middle      = l:prefix . l:title . ' '
+  let l:suffix_len  = l:total_width - strdisplaywidth(l:middle)
+  let l:suffix_len  = l:suffix_len < 0 ? 0 : l:suffix_len
+  let l:new_line    = l:middle . repeat('─', l:suffix_len)
+
+  call setline('.', l:new_line)
+endfunction
+
+nnoremap <Leader>h :call FormatSectionHeader()<CR>
+
+" ──────── Colorscheme ────────────────────────────────────
 set background=dark
 " colorscheme papilio_dehaanii
 colorscheme nightfly
