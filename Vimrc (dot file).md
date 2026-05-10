@@ -7,7 +7,7 @@
 "              If you're a more advanced user, building your own .vimrc based
 "              on this file is still a good idea.
 
-"------------------------------------------------------------
+" ------------------------------------------
 " Features {{{1
 "
 " These options and commands enable some very useful features in Vim, that
@@ -25,7 +25,7 @@ filetype plugin indent on
 " Enable syntax highlighting
 syntax on
 
-"------------------------------------------------------------
+" ------------------------------------------
 " Must have options {{{1
 "
 " These are highly recommended options.
@@ -67,7 +67,7 @@ set hlsearch
 " set nomodeline
 
 
-"------------------------------------------------------------
+" ------------------------------------------
 " Usability options {{{1
 "
 " These are options that users frequently set in their .vimrc. Some of them
@@ -127,7 +127,7 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 
 
-"------------------------------------------------------------
+" ------------------------------------------
 " Indentation options {{{1
 "
 " Indentation settings according to personal preference.
@@ -144,7 +144,7 @@ set expandtab
 "set tabstop=4
 
 
-"------------------------------------------------------------
+" ------------------------------------------
 " Mappings {{{1
 "
 " Useful mappings
@@ -157,7 +157,7 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-" ──────── alfredxuser config ───────────────────────────
+" ──────── alfredxuser config ──────────────
 
 " Map leader key
 let mapleader=','
@@ -177,9 +177,9 @@ set scrolloff=10
 " Clipboard; Ctrl C in visual mode to copy for Linux/PC
 "vnoremap <C-c> "+y
 
-" ──────── Clipboard Settings ──────────────────────────────────────────
+" ──────── Clipboard Settings ──────────────
 if has('macunix')
-  " ── macOS ────────────────────────────────────────────────────
+" ──────── macOS ───────────────────────────
   set clipboard=unnamed
 
   " vnoremap <C-c> y:call system('pbcopy', @")<CR>
@@ -187,12 +187,12 @@ if has('macunix')
   nnoremap <C-v> :read !pbpaste<CR>
 
 elseif executable('termux-clipboard-set')
-  " ── Termux (Android) ─────────────────────────────────────────
+" ──────── Termus (Android) ────────────────
   vnoremap <C-c> :w !termux-clipboard-set<CR><CR>
   nnoremap <C-v> :read !termux-clipboard-get<CR>
 
 elseif has('unix')
-  " ── Linux ────────────────────────────────────────────────────
+" ──────── Linux ───────────────────────────
   if executable('xclip')
     set clipboard=unnamedplus
     vnoremap <C-c> y:call system('xclip -selection clipboard', @")<CR>
@@ -204,13 +204,13 @@ elseif has('unix')
   endif
 
 elseif has('win32') || has('win64')
-  " ── Windows ──────────────────────────────────────────────────
+" ──────── Windows ─────────────────────────
   set clipboard=unnamed
   vnoremap <C-c> y:call system('clip', @")<CR>
   nnoremap <C-v> :read !powershell.exe -command Get-Clipboard<CR>
 
 endif
-" ──────── Clipboard Settings ──────────────────────────────────────────
+" ──────── Clipboard Settings ──────────────
 
 " Syntax complete
 set omnifunc=syntaxcomplete#Complete
@@ -245,11 +245,11 @@ nnoremap <Leader>d :bd<CR>
 " GUI font (NordFont)
 "set guifont=DejaVu\ Sans\ Mono\ 16
 
-" ──────── Plugins ───────────────────────────────────────────
+" ──────── Plugins ─────────────────────────
 packloadall
 
 " Airline for Vim
-" ──────── Airline status bar ────────────────────────────────
+" ──────── Airline Status Bar ──────────────
 let g:airline_section_c = '🐶 %F 🐣'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -257,7 +257,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" ──────── Unicode Symbols ───────────────────────────────────
+" ──────── Unicode Symbols ─────────────────
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
@@ -271,7 +271,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" ──────── Airline Symbols ───────────────────────────────────
+" ──────── Airline Symbols ─────────────────
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -284,13 +284,13 @@ let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = ''
 
-" ──────── NERDTree ────────────────────────────────────────
+" ──────── NERDTree ────────────────────────
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" ──────── NERDCommenter ───────────────────────────────────
+" ──────── NERDCommenter ───────────────────
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
 
@@ -318,15 +318,15 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
-" ──────── Emmet ──────────────────────────────────────────
+" ──────── Emmet ───────────────────────────
 imap <expr> <leader><tab> emmet#expandAbbrIntelligent("\<tab>")
 
-" ──────── CSS Complete ───────────────────────────────────
+" ──────── CSS Complete ────────────────────
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 
-" ── Section Header Formatter ────────────────────────────────────
+" ──────── Section Header Formatter ────────
 function! FormatSectionHeader()
-  let l:total_width = 57        " Your desired total line width
+  let l:total_width = 44        " Your desired total line width
   let l:prefix      = '" ──────── '
   let l:line        = getline('.')
 
@@ -345,7 +345,7 @@ endfunction
 
 nnoremap <Leader>h :call FormatSectionHeader()<CR>
 
-" ──────── Colorscheme ────────────────────────────────────
+" ──────── Colorscheme ─────────────────────
 set background=dark
 " colorscheme papilio_dehaanii
 colorscheme nightfly
