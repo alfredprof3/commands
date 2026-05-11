@@ -4,6 +4,7 @@
 
 ### Command line markdown viewers
 
+https://github.com/guilhermeprokisch/see ✅
 https://codeberg.org/johann1764/smd ✅
 https://github.com/visit1985/mdp ✅
 https://github.com/charrismatic/mandown
