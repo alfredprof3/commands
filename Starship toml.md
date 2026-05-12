@@ -1,146 +1,138 @@
 # Starship toml config
 
-# ~/.config/starship.toml
-
-#--- Use custom format
-format = '''
-[┌──────>](bold green)
-[│](bold green)$os$username$hostname$directory$git_branch$git_status$git_commit$fill$nodejs$cmd_duration$time$character
-[└─>](bold green) '''
-
-#--- Wait 10 milliseconds for starship to check files under the current directory.
-scan_timeout = 10
-
-#---- Disable the blank line at the start of the prompt
 add_newline = false
 
-#--- Set 'foo' as custom color palette
-palette = 'foo'
+format = """
+╭──$os$username$hostname[](fg:#ffffff) $directory
+╰──$git_branch$git_status$git_state$git_metrics$docker_context$kubernetes$terraform$c$cpp$python$rust$nodejs$go$java$php$ruby$haskell$zig$swift$kotlin$dotnet$bun$deno$lua$cmake$package$character
+"""
 
-#--- Define custom colors
-[palettes.foo]
+########################################
+#####---------- Hardware ----------#####
+########################################
+right_format = """$memory_usage$battery$cmd_duration$time"""
 
-#--- Overwrite existing color
-blue = '21'
+[os]
+disabled = false
+style = "bg:#ffffff fg:#000000"
+format = "[$symbol]($style)"
 
-#--- Define new color
-mustard = '#af8700'
+[os.symbols]
+Macos = "󰀵 "
+Linux = "󰻀 "
+Windows = "󰍲 "
 
-[fill]
-symbol = " "
+[username]
+show_always = true
+style_user = "bg:#ffffff fg:#000000"
+style_root = "bg:#ffffff fg:#000000"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style = "bg:#ffffff fg:#000000"
+format = "[@$hostname]($style)"
+
+[directory]
+style = "fg:#ffffff"
+format = "[ 󰉋 ](bg:#ffffff fg:#000000) [ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = "󱑢 "
+"Music" = "󰝚 "
+"Pictures" = "󰙏 "
+"Developer" = "󟤧 "
+
+[git_branch]
+symbol = "󰘬"
+style = "fg:#a6adc8"
+format = " [ $symbol $branch ](bg:#a6adc8 fg:#000000)"
+
+[git_status]
+style = "fg:#ffffff"
+format = "[[($all_status$ahead_behind )]($style)]($style)"
+
+[git_metrics]
+disabled = false
+added_style = "fg:#a6adc8"
+deleted_style = "fg:#a6adc8"
+format = "[+$added]($added_style)/[-$deleted]($deleted_style) "
+
+#########################################
+#####---------- Languages ----------#####
+#########################################
+[python]
+symbol = "󱔎 "
+style = "fg:#7f849c"
+format = " [ $symbol($virtualenv) ](bg:#7f849c fg:#000000)"
+
+[rust]
+symbol = "󱘗 "
+style = "fg:#7f849c"
+format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
 
 [nodejs]
-format = "[$symbol($version )]($style)"
-disabled = false
+symbol = "󰎙 "
+style = "fg:#7f849c"
+format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
 
-[cmd_duration]
-format = "[$duration]($style)"
-style = "yellow"
+[go]
+symbol = " "
+style = "fg:#7f849c"
+format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
 
+[cpp]
+symbol = " "
+style = "fg:#7f849c"
+format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
+
+[c]
+symbol = " "
+style = "fg:#7f849c"
+format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
+
+[lua]
+symbol = "󰢱 "
+style = "fg:#7f849c"
+format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
+
+#######################################
+#####---------- Modules ----------#####
+#######################################
 [memory_usage]
-symbol = " "
+disabled = false
+threshold = 30
+style = "fg:#585b70"
+symbol = "󰍛 "
+format = "[$symbol${ram} ]($style)"
+
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+format = "[$symbol$percentage]($style) "
+
+[[battery.display]]
+threshold = 20
+style = "fg:#ffffff"
 
 [time]
 disabled = false
-style = "bold white"
-format = "[$time]($style)"
+time_format = "%R"
+style = "fg:#585b70"
+format = "󱑒 $time "
 
-[custom.stunnel]
-when = "ps aux | grep stunnel | grep -v grep"
-command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
-style = "red"
-format = "[TUNNEL OPEN for $output]($style)"
+[cmd_duration]
+min_time = 500
+style = "fg:#585b70"
+format = "󱎫 $duration "
 
-
-# Drop ugly default prompt characters
+#####################################
+#####---------- Input ----------#####
+#####################################
 [character]
-success_symbol = ''
-error_symbol = ''
-
-# ---
-
-[os]
-format = '[$symbol](bold white) '
-disabled = false
-
-[os.symbols]
-Windows = ''
-Arch = '󰣇'
-Ubuntu = ''
-Macos = '󰀵'
-
-# ---
-
-# Shows the username
-[username]
-style_user = 'white bold'
-style_root = 'black bold'
-format = '[$user]($style) '
-disabled = false
-show_always = true
-
-# Shows the hostname
-[hostname]
-ssh_only = false
-format = 'on [$hostname](bold yellow) '
-disabled = false
-
-# Shows current directory
-[directory]
-truncation_length = 1
-truncation_symbol = '…/'
-home_symbol = '󰋜 ~'
-read_only_style = '197'
-read_only = '  '
-format = 'at [$path]($style)[$read_only]($read_only_style) '
-
-# Shows current git branch
-[git_branch]
-symbol = ''
-format = 'via [$symbol$branch]($style)'
-# truncation_length = 4
-truncation_symbol = '…/'
-style = 'bold green'
-
-# Shows current git status
-[git_status]
-format = '[$all_status$ahead_behind]($style) '
-style = 'bold green'
-conflicted = '🏳'
-up_to_date = ''
-untracked = ' '
-ahead = '⇡${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-behind = '⇣${count}'
-stashed = ' '
-modified = ' '
-staged = '[++\($count\)](green)'
-renamed = '襁 '
-deleted = ' '
-
-# git commit
-
-[git_commit]
-commit_hash_length = 4
-tag_symbol = '🔖 '
-
-
-# ---
-
-[vagrant]
-disabled = true
-
-[docker_context]
-disabled = true
-
-[helm]
-disabled = true
-
-[python]
-disabled = true
-
-[ruby]
-disabled = true
-
-[terraform]
-disabled = true
+success_symbol = " [󰄾 ](fg:#ffffff)"
+error_symbol = " [󰅙 ](fg:#ff6666)"
