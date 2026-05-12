@@ -21,9 +21,8 @@ $line_break\
 $character"""
 add_newline = true # Disable the blank line at the start of the prompt
 
-
 [os]
-format = "[](fg:#6791C9 bg:none)[ ](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:#8994fa)"
+format = "[](fg:#6791C9 bg:none)[](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:#8994fa)"
 disabled = false
 
 [directory]
