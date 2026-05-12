@@ -1,4 +1,3 @@
-
 # Setups
 # format = "$directory$git_branch$character"
 format = """
