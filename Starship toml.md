@@ -1,157 +1,49 @@
-# Starship toml config
-
-add_newline = false
-
+# Setups
+# format = "$directory$git_branch$character"
 format = """
-╭──$os$username$hostname[](fg:#ffffff) $directory
-╰──$git_branch$git_status$git_state$git_metrics$docker_context$kubernetes$terraform$c$cpp$python$rust$nodejs$go$java$php$ruby$haskell$zig$swift$kotlin$dotnet$bun$deno$lua$cmake$package$character
-"""
+$os\
+$directory\
 
-########################################
-#####---------- Hardware ----------#####
-########################################
-right_format = """$memory_usage$battery$cmd_duration$time"""
+$kubernetes\
+$hg_branch\
+$docker_context\
+
+$fill\
+$git_branch\
+$git_status\
+$git_commit\
+$jobs\
+$status\
+$container\
+$shell\
+$time\
+$line_break\
+$character"""
+add_newline = true # Disable the blank line at the start of the prompt
+
 
 [os]
+format = "[](fg:#6791C9 bg:none)[ ](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:#8994fa)"
 disabled = false
-style = "bg:#ffffff fg:#000000"
-format = "[$symbol]($style)"
-
-[os.symbols]
-Windows = "󰍲 "
-Ubuntu = "󰕈 "
-SUSE = " "
-Raspbian = "󰐿 "
-Mint = "󰣭 "
-Macos = "󰀵 "
-Manjaro = " "
-Linux = "󰌽 "
-Gentoo = "󰣨 "
-Fedora = "󰣛 "
-Alpine = " "
-Amazon = " "
-Android = " "
-AOSC = " "
-Arch = "󰣇 "
-Artix = "󰣇 "
-EndeavourOS = " "
-CentOS = " "
-Debian = "󰣚 "
-Redhat = "󱄛 "
-RedHatEnterprise = "󱄛 "
-Pop = " "
-
-[username]
-show_always = true
-style_user = "bg:#ffffff fg:#000000"
-style_root = "bg:#ffffff fg:#000000"
-format = "[$user]($style)"
-
-[hostname]
-ssh_only = false
-style = "bg:#ffffff fg:#000000"
-format = "[@$hostname]($style)"
 
 [directory]
-style = "fg:#ffffff"
-format = "[ 󰉋 ](bg:#ffffff fg:#000000) [ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
+format = "[  ](fg:#252525 bg:#8994fa)[](fg:#8994fa bg:#252525)[█](fg:#252525 bg:none)[$path]($style)[](fg:#232526 bg:none)"
+style = "fg:#E8E3E3 bg:#252525 bold"
+truncation_length = 2
+truncate_to_repo = true
+read_only = "  "
+home_symbol = " 󰋜  "
 
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = "󱑢 "
-"Music" = "󰝚 "
-"Pictures" = "󰙏 "
-"Developer" = "󟤧 "
+"Documents" = "  "
+"Downloads" = "  "
+"Music" = "  "
+"Pictures" = "  "
 
-[git_branch]
-symbol = "󰘬"
-style = "fg:#a6adc8"
-format = " [ $symbol $branch ](bg:#a6adc8 fg:#000000)"
-
-[git_status]
-style = "fg:#ffffff"
-format = "[[($all_status$ahead_behind )]($style)]($style)"
-
-[git_metrics]
-disabled = false
-added_style = "fg:#a6adc8"
-deleted_style = "fg:#a6adc8"
-format = "[+$added]($added_style)/[-$deleted]($deleted_style) "
-
-#########################################
-#####---------- Languages ----------#####
-#########################################
-[python]
-symbol = "󱔎 "
-style = "fg:#7f849c"
-format = " [ $symbol($virtualenv) ](bg:#7f849c fg:#000000)"
-
-[rust]
-symbol = "󱘗 "
-style = "fg:#7f849c"
-format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
-
-[nodejs]
-symbol = "󰎙 "
-style = "fg:#7f849c"
-format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
-
-[go]
-symbol = " "
-style = "fg:#7f849c"
-format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
-
-[cpp]
-symbol = " "
-style = "fg:#7f849c"
-format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
-
-[c]
-symbol = " "
-style = "fg:#7f849c"
-format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
-
-[lua]
-symbol = "󰢱 "
-style = "fg:#7f849c"
-format = " [ $symbol($version) ](bg:#7f849c fg:#000000)"
-
-#######################################
-#####---------- Modules ----------#####
-#######################################
-[memory_usage]
-disabled = false
-threshold = 30
-style = "fg:#585b70"
-symbol = "󰍛 "
-format = "[$symbol${ram} ]($style)"
-
-[battery]
-full_symbol = "󰁹 "
-charging_symbol = "󰂄 "
-discharging_symbol = "󰂃 "
-format = "[$symbol$percentage]($style) "
-
-[[battery.display]]
-threshold = 20
-style = "fg:#ffffff"
-
-[time]
-disabled = false
-time_format = "%R"
-style = "fg:#585b70"
-format = "󱑒 $time "
-
-[cmd_duration]
-min_time = 500
-style = "fg:#585b70"
-format = "󱎫 $duration "
-
-#####################################
-#####---------- Input ----------#####
-#####################################
+# Prompt symbols
 [character]
-success_symbol = " [󰄾 ](fg:#ffffff)"
-error_symbol = " [󰅙 ](fg:#ff6666)"
+success_symbol = "[ 🞈 ](#6791C9 bold)"
+error_symbol = "[ 🞈 ](#B66467 bold)"
+
+[line_break]
+disabled = false
