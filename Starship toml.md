@@ -1,3 +1,4 @@
+
 # Setups
 # format = "$directory$git_branch$character"
 format = """
@@ -20,6 +21,7 @@ $time\
 $line_break\
 $character"""
 add_newline = true # Disable the blank line at the start of the prompt
+
 
 [os]
 format = "[](fg:#6791C9 bg:none)[](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:#8994fa)"
@@ -52,7 +54,7 @@ symbol = ' '
 style = 'bold green'
 
 [git_branch]
-format = "[](fg:#252525 bg:none)[$branch]($style)[](fg:#252525 bg:#252525)[](fg:#81C19B bg:#252525)[ ](fg:#252525 bg:#81C19B)[](fg:#81C19B bg:none) "
+format = "[](fg:#252525 bg:none)[$branch]($style)[](fg:#252525 bg:#252525)[](fg:#81C19B bg:#252525)[](fg:#252525 bg:#81C19B)[](fg:#81C19B bg:none) "
 style = "fg:#E8E3E3 bg:#252525"
 truncation_length = 15
 
@@ -65,7 +67,7 @@ show_notifications = false
 min_time_to_notify = 45_000
 
 [git_status]
-format = "[](fg:#252525 bg:none)[$all_status$ahead_behind]($style)[](fg:#252525 bg:#252525)[](fg:#6791C9 bg:#252525)[ ](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:none) "
+format = "[](fg:#252525 bg:none)[$all_status$ahead_behind]($style)[](fg:#252525 bg:#252525)[](fg:#6791C9 bg:#252525)[](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:none) "
 style = "fg:#E8E3E3 bg:#252525"
 conflicted = "🏳"
 ahead = "⇡${count}"
@@ -97,7 +99,7 @@ format = '\([$state( $progress_current/$progress_total)]($style)\) '
 [time]
 disabled = false
 time_format = "%R"                                                                                                                                      # Hour:Minute Format
-format = "[](fg:#252525 bg:none)[$time]($style)[](fg:#252525 bg:#252525)[](fg:#6791C9 bg:#252525)[󱑂 ](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:none)"
+format = "[](fg:#252525 bg:none)[$time]($style)[](fg:#252525 bg:#252525)[](fg:#6791C9 bg:#252525)[󱑂](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:none)"
 style = "fg:#E8E3E3 bg:#252525 bold"
 
 [aws]
