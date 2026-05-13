@@ -1,204 +1,159 @@
-# Setups
-# format = "$directory$git_branch$character"
+
+add_newline = true
+
 format = """
-$os\
-$directory\
+╭──$os$username$hostname[](fg:#00fff5) $directory
+|
+╰──$git_branch$git_status$git_state$git_metrics$docker_context$kubernetes$terraform$c$cpp$python$rust$nodejs$go$java$php$ruby$haskell$zig$swift$kotlin$dotnet$bun$deno$lua$cmake$package$character
+"""
 
-$kubernetes\
-$hg_branch\
-$docker_context\
-
-$fill\
-$git_branch\
-$git_status\
-$git_commit\
-$jobs\
-$status\
-$container\
-$shell\
-$time\
-$line_break\
-$character"""
-add_newline = true # Disable the blank line at the start of the prompt
-
+########################################
+#####---------- Hardware ----------#####
+########################################
+right_format = """$memory_usage$cmd_duration$time"""
 
 [os]
-format = "[](fg:#6791C9 bg:none)[](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:#8994fa)"
 disabled = false
+style = "bg:#00fff5 fg:#0b1c2c"
+format = "[$symbol]($style)"
+
+[os.symbols]
+Windows = "󰍲 "
+Ubuntu = "󰕈 "
+SUSE = " "
+Raspbian = "󰐿 "
+Mint = "󰣭 "
+Macos = "󰀵 "
+Manjaro = " "
+Linux = "󰌽 "
+Gentoo = "󰣨 "
+Fedora = "󰣛 "
+Alpine = " "
+Amazon = " "
+Android = " "
+AOSC = " "
+Arch = "󰣇 "
+Artix = "󰣇 "
+EndeavourOS = " "
+CentOS = " "
+Debian = "󰣚 "
+Redhat = "󱄛 "
+RedHatEnterprise = "󱄛 "
+Pop = " "
+
+[username]
+show_always = true
+style_user = "bg:#000000 fg:#ffffff"
+style_root = "bg:#000000 fg:#ffffff"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style = "bg:#00fff5 fg:#0b1c2c"
+format = "[@$hostname]($style)"
 
 [directory]
-format = "[  ](fg:#252525 bg:#8994fa)[](fg:#8994fa bg:#252525)[█](fg:#252525 bg:none)[$path]($style)[](fg:#232526 bg:none)"
-style = "fg:#E8E3E3 bg:#252525 bold"
-truncation_length = 2
-truncate_to_repo = true
-read_only = "  "
-home_symbol = " 󰋜  "
+style = "fg:#e08fff"
+format = "[ 󰉋 ](bg:#e08fff fg:#0b1c2c) [ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
 
 [directory.substitutions]
-"Documents" = "  "
-"Downloads" = "  "
-"Music" = "  "
-"Pictures" = "  "
-
-# Prompt symbols
-[character]
-success_symbol = "[ 🞈 ](#6791C9 bold)"
-error_symbol = "[ 🞈 ](#B66467 bold)"
-
-[line_break]
-disabled = false
-
-[fill]
-symbol = ' '
-style = 'bold green'
+"Documents" = "󰈙 "
+"Downloads" = "󱑢 "
+"Music" = "󰝚 "
+"Pictures" = "󰙏 "
+"Developer" = "󟤧 "
 
 [git_branch]
-format = "[](fg:#252525 bg:none)[$branch]($style)[](fg:#252525 bg:#252525)[](fg:#81C19B bg:#252525)[](fg:#252525 bg:#81C19B)[](fg:#81C19B bg:none) "
-style = "fg:#E8E3E3 bg:#252525"
-truncation_length = 15
-
-[cmd_duration]
-min_time = 1
-format = "[](fg:#252525 bg:none)[$duration]($style)[](fg:#252525 bg:#252525)[](fg:#C397D8 bg:#252525)[ ](fg:#252525 bg:#C397D8)[](fg:#C397D8 bg:none) "
-style = "fg:#E8E3E3 bg:#252525 bold"
-show_milliseconds = true
-show_notifications = false
-min_time_to_notify = 45_000
+symbol = "󰘬"
+style = "fg:#00fff5"
+format = " [ $symbol $branch ](bg:#e08fff fg:#000000)"
 
 [git_status]
-format = "[](fg:#252525 bg:none)[$all_status$ahead_behind]($style)[](fg:#252525 bg:#252525)[](fg:#6791C9 bg:#252525)[](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:none) "
-style = "fg:#E8E3E3 bg:#252525"
-conflicted = "🏳"
-ahead = "⇡${count}"
-behind = "⇣${count}"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-up_to_date = " 󰄸 "
-untracked = "🤷${count}"
-stashed = "📦"
-modified = "📝${count}"
-staged = "++${count}"
-renamed = "»${count}"
-deleted = " ${count}"
+style = "fg:#ffffff"
+format = "[[($all_status$ahead_behind )]($style)]($style)"
 
-[git_commit]
-format = "[\\($hash\\)]($style) [\\($tag\\)]($style)"
-style = "green"
-
-[git_state]
-rebase = "REBASING"
-merge = "MERGING"
-revert = "REVERTING"
-cherry_pick = "CHERRY-PICKING"
-bisect = "BISECTING"
-am = "AM"
-am_or_rebase = "AM/REBASE"
-style = "yellow"
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-
-[time]
+[git_metrics]
 disabled = false
-time_format = "%R"                                                                                                                                      # Hour:Minute Format
-format = "[](fg:#252525 bg:none)[$time]($style)[](fg:#252525 bg:#252525)[](fg:#6791C9 bg:#252525)[󱑂](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:none)"
-style = "fg:#E8E3E3 bg:#252525 bold"
+added_style = "fg:#e08fff"
+deleted_style = "fg:#e08fff"
+format = "[+$added]($added_style)/[-$deleted]($deleted_style) "
 
-[aws]
-symbol = "  "
+#########################################
+#####---------- Languages ----------#####
+#########################################
+[python]
+symbol = "󱔎 "
+style = "fg:#e08fff"
+format = " [ $symbol($virtualenv) ](bg:#e08fff fg:#000000)"
 
-[conda]
-symbol = " "
+[rust]
+symbol = "󱘗 "
+style = "fg:#e08fff"
+format = " [ $symbol($version) ](bg:#e08fff fg:#000000)"
 
-[dart]
-symbol = " "
-
-[docker_context]
-symbol = " "
-format = "via [$symbol$context]($style) "
-style = "blue bold"
-only_with_files = true
-detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
-detect_folders = []
-disabled = false
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
+[nodejs]
+symbol = "󰎙 "
+style = "fg:#e08fff"
+format = " [ $symbol($version) ](bg:#e08fff fg:#000000)"
 
 [golang]
 symbol = " "
+style = "fg:#e08fff"
+format = " [ $symbol($version) ](bg:#e08fff fg:#000000)"
 
-[hg_branch]
-symbol = " "
+[cpp]
+symbol = " "
+style = "fg:#e08fff"
+format = " [ $symbol($version) ](bg:#e08fff fg:#000000)"
 
-[java]
-symbol = " "
+[c]
+symbol = " "
+style = "fg:#e08fff"
+format = " [ $symbol($version) ](bg:#e08fff fg:#000000)"
 
-[julia]
-symbol = " "
+[lua]
+symbol = "󰢱 "
+style = "fg:#e08fff"
+format = " [ $symbol($version) ](bg:#e08fff fg:#000000)"
 
-[haskell]
-symbol = "λ "
-
+#######################################
+#####---------- Modules ----------#####
+#######################################
 [memory_usage]
-symbol = " "
+disabled = false
+threshold = 30
+style = "fg:#585b70"
+symbol = "󰍛 "
+format = "[$symbol${ram} ]($style)"
 
-[nim]
-symbol = " "
+# [battery]
+# disabled = true
+# full_symbol = "󰁹 "
+# charging_symbol = "󰂄 "
+# discharging_symbol = "󰂃 "
+# format = "[$symbol$percentage]($style) "
 
-[nix_shell]
-symbol = " "
+# [[battery.display]]
+# disabled = true
+# threshold = 20
+# style = "fg:#ffffff"
 
-[package]
-symbol = " "
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:#585b70"
+format = "󱑒 $time "
 
-[perl]
-symbol = " "
+[cmd_duration]
+min_time = 500
+style = "fg:#585b70"
+format = "󱎫 $duration "
 
-[php]
-symbol = " "
-
-[python]
-symbol = " "
-#pyenv_version_name = true
-format = 'via [${symbol}python (${version} )(\($virtualenv\) )]($style)'
-style = "bold yellow"
-pyenv_prefix = "venv "
-python_binary = ["./venv/bin/python", "python", "python3", "python2"]
-detect_extensions = ["py"]
-version_format = "v${raw}"
-
-[ruby]
-symbol = " "
-
-[rust]
-symbol = "🦀"
-style = "bg:#ffb347 fg:#464347"
-
-[scala]
-symbol = " "
-
-[shlvl]
-symbol = " "
-
-[swift]
-symbol = "ﯣ "
-
-[nodejs]
-format = "via [ Node.js $version](bold green) "
-detect_files = ["package.json", ".node-version"]
-detect_folders = ["node_modules"]
-
-# Other languages configurations:
-c.disabled = true
-cmake.disabled = true
-haskell.disabled = true
-python.disabled = true
-ruby.disabled = true
-rust.disabled = true
-perl.disabled = true
-package.disabled = true
-lua.disabled = true
-nodejs.disabled = true
-java.disabled = true
-golang.disabled = true
+#####################################
+#####---------- Input ----------#####
+#####################################
+[character]
+success_symbol = " [󰄾 ](fg:#ffffff)"
+error_symbol = " [󰅙 ](fg:#ff6666)"
