@@ -79,6 +79,7 @@ Reset the width and height of windows:
 - [vim visual multi](https://github.com/mg979/vim-visual-multi)
 - [vim snippets](https://github.com/honza/vim-snippets) or [UltiSnips](https://github.com/sirver/ultisnips)
 - [html5](https://github.com/othree/html5.vim)
+- [vim-airline-clock](https://github.com/enricobacis/vim-airline-clock.git)
 
 # Vim Colorschemes
 - [Papilio Dehaanii](https://github.com/keiyakeiya/PapilioDehaanii.vim)
