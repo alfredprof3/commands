@@ -248,7 +248,6 @@ nnoremap <Leader>d :bd<CR>
 " ──────── Plugins ─────────────────────────
 packloadall
 
-" Airline for Vim
 " ──────── Airline Status Bar ──────────────
 let g:airline_section_c = '🐶 %F 🐣'
 let g:airline#extensions#tabline#enabled = 1
@@ -272,11 +271,11 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " ──────── Airline Symbols ─────────────────
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = '|'
+let g:airline_symbols.branch = '󰘬'
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
@@ -325,20 +324,54 @@ imap <expr> <leader><tab> emmet#expandAbbrIntelligent("\<tab>")
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 
 " ──────── Section Header Formatter ────────
-function! FormatSectionHeader()
-  let l:total_width = 44        " Your desired total line width
-  let l:prefix      = '" ──────── '
-  let l:line        = getline('.')
 
-  " Strip existing formatting, keep only the title text
-  let l:title = substitute(l:line, '^"\s*─*\s*', '', '')
+" ── Section Header Formatter ────────────────────────────────────
+function! FormatSectionHeader()
+  let l:total_width = 57
+
+  " ── Detect comment character by filetype ──────────────
+  let l:comment_map = {
+    \ 'vim':        '"',
+    \ 'toml':       '#',
+    \ 'python':     '#',
+    \ 'bash':       '#',
+    \ 'sh':         '#',
+    \ 'zsh':        '#',
+    \ 'ruby':       '#',
+    \ 'perl':       '#',
+    \ 'yaml':       '#',
+    \ 'dockerfile': '#',
+    \ 'make':       '#',
+    \ 'lua':        '--',
+    \ 'sql':        '--',
+    \ 'haskell':    '--',
+    \ 'javascript': '//',
+    \ 'typescript': '//',
+    \ 'java':       '//',
+    \ 'c':          '//',
+    \ 'cpp':        '//',
+    \ 'css':        '//',
+    \ 'go':         '//',
+    \ 'rust':       '//',
+    \ }
+
+  " Fallback to # if filetype not in map
+  let l:ft      = &filetype
+  let l:comment = get(l:comment_map, l:ft, '#')
+
+  " ── Build prefix and strip existing formatting ─────────
+  let l:prefix  = l:comment . ' ──────── '
+  let l:line    = getline('.')
+
+  " Strip existing comment char, dashes and whitespace
+  let l:title = substitute(l:line, '^.\{1,3\}\s*─*\s*', '', '')
   let l:title = substitute(l:title, '\s*─*\s*$', '', '')
 
-  " Build the new line and calculate remaining hyphens
-  let l:middle      = l:prefix . l:title . ' '
-  let l:suffix_len  = l:total_width - strdisplaywidth(l:middle)
-  let l:suffix_len  = l:suffix_len < 0 ? 0 : l:suffix_len
-  let l:new_line    = l:middle . repeat('─', l:suffix_len)
+  " ── Calculate and build the new header line ────────────
+  let l:middle     = l:prefix . l:title . ' '
+  let l:suffix_len = l:total_width - strdisplaywidth(l:middle)
+  let l:suffix_len = l:suffix_len < 0 ? 0 : l:suffix_len
+  let l:new_line   = l:middle . repeat('─', l:suffix_len)
 
   call setline('.', l:new_line)
 endfunction
