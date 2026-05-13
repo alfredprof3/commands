@@ -1,3 +1,6 @@
+<!-- Special characters -->
+# 󰘬                                 
+
 add_newline = true
 
 format = """
