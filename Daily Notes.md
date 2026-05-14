@@ -1,6 +1,7 @@
 # Notes
 
 https://github.com/matricci/oh-my-zsh-termux
+https://gist.github.com/rahaaatul/cc47d88dddd73a684e67bfa0f8b57d9d
 
 ## 05-10-2026, Sunday
 
