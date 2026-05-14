@@ -13,9 +13,9 @@ https://github.com/visit1985/mdp ✅
 https://github.com/charrismatic/mandown ❌
 https://github.com/textualize/frogmouth ✅
 https://github.com/avilum/busymd ✅
-https://github.com/Inlyne-Project/inlyne
-https://github.com/mvz/mdv
-https://github.com/mrchimp/mdr
+https://github.com/Inlyne-Project/inlyne ✅
+https://github.com/mvz/mdv ✅
+https://github.com/mrchimp/mdr ✅
 https://github.com/tj/mad
 ⛔️
 ### Pass git helper
