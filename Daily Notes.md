@@ -16,8 +16,8 @@ https://github.com/avilum/busymd ✅
 https://github.com/Inlyne-Project/inlyne ✅
 https://github.com/mvz/mdv ✅
 https://github.com/mrchimp/mdr ✅
-https://github.com/tj/mad
-⛔️
+https://github.com/tj/mad ⛔️
+
 ### Pass git helper
 https://github.com/languitar/pass-git-helper
 
