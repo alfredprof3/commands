@@ -1,5 +1,7 @@
 # Notes
 
+https://github.com/matricci/oh-my-zsh-termux
+
 ## 05-10-2026, Sunday
 
 ### Command line markdown viewers
