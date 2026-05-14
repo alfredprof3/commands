@@ -15,6 +15,7 @@ https://github.com/textualize/frogmouth
 https://github.com/avilum/busymd
 https://github.com/Inlyne-Project/inlyne
 https://github.com/mvz/mdv
+https://github.com/mrchimp/mdr
 
 ### Pass git helper
 https://github.com/languitar/pass-git-helper
