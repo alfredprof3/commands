@@ -14,6 +14,7 @@ https://github.com/charrismatic/mandown
 https://github.com/textualize/frogmouth
 https://github.com/avilum/busymd
 https://github.com/Inlyne-Project/inlyne
+https://github.com/mvz/mdv
 
 ### Pass git helper
 https://github.com/languitar/pass-git-helper
