@@ -327,7 +327,7 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 
 " ── Section Header Formatter ────────────────────────────────────
 function! FormatSectionHeader()
-  let l:total_width = 57
+  let l:total_width = 44
 
   " ── Detect comment character by filetype ──────────────
   let l:comment_map = {
