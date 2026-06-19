@@ -323,6 +323,63 @@ imap <expr> <leader><tab> emmet#expandAbbrIntelligent("\<tab>")
 " ──────── CSS Complete ────────────────────
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
 
+" ──────── Section Header Formatter ────────
+
+function! FormatSectionHeader()
+  let l:total_width = 44
+
+  " ── Detect comment character by filetype ──────────────
+  let l:comment_map = {
+    \ 'vim':        '"',
+    \ 'toml':       '#',
+    \ 'python':     '#',
+    \ 'bash':       '#',
+    \ 'sh':         '#',
+    \ 'zsh':        '#',
+    \ 'ruby':       '#',
+    \ 'perl':       '#',
+    \ 'yaml':       '#',
+    \ 'dockerfile': '#',
+    \ 'make':       '#',
+    \ 'r':          '#',
+    \ 'lua':        '--',
+    \ 'sql':        '--',
+    \ 'haskell':    '--',
+    \ 'javascript': '//',
+    \ 'typescript': '//',
+    \ 'java':       '//',
+    \ 'c':          '//',
+    \ 'cpp':        '//',
+    \ 'css':        '//',
+    \ 'go':         '//',
+    \ 'rust':       '//',
+    \ 'kotlin':     '//',
+    \ 'swift':      '//',
+    \ }
+
+  " Fallback to # if filetype not in map
+  let l:ft      = &filetype
+  let l:comment = get(l:comment_map, l:ft, '#')
+
+  " ── Build prefix ───────────────────────────────────────
+  let l:prefix  = l:comment . ' ──────── '
+  let l:line    = getline('.')
+
+  " ── Strip ONLY the actual comment char + dashes ─────────
+  let l:esc_comment = escape(l:comment, '/\.*$^~[]')
+  let l:title = substitute(l:line, '^\s*' . l:esc_comment . '\s*─*\s*', '', '')
+  let l:title = substitute(l:title, '\s*─*\s*$', '', '')
+
+  " ── Calculate and build the new header line ────────────
+  let l:middle     = l:prefix . l:title . ' '
+  let l:suffix_len = l:total_width - strdisplaywidth(l:middle)
+  let l:suffix_len = l:suffix_len < 0 ? 0 : l:suffix_len
+  let l:new_line   = l:middle . repeat('─', l:suffix_len)
+
+  call setline('.', l:new_line)
+endfunction
+
+nnoremap <Leader>h :call FormatSectionHeader()<CR>
 
 " ──────── Colorscheme ─────────────────────
 set background=dark
