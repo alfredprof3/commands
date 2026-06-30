@@ -1,6 +1,4 @@
-
-
-# Install
+# Install NVM (Node Version Manager)
 
 ```bash
 # Option 1
