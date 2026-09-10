@@ -177,3 +177,36 @@ ui skills
 
 
 Git Credential Manager - Virtual Machine Setup
+-----
+
+secret-tool store --label="This_is_a_test_to_store_an_API-Key" service GitHub username alfredprof3
+secret-tool lookup service GitHub username alfredprof3
+secret-tool clear service GitHub username alfredprof3
+secret-tool lookup service GitHub username alfredprof3
+
+git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+git config --global credential.credentialStore secretservice
+sudo dpkg -i gcm-linux-x64-2.9.1.deb
+git-credential-manager configure
+
+```bash
+vim gpg-agent.conf
+pinentry-program /usr/bin/pinentry-gnome3
+```
+
+```bash
+sudo apt install gnupg2
+gpg --expert --full-generate-key
+```
+
+
+Example of `.gitconfig`
+[user]
+	name = alfredprof3
+	email = alfredprof3@gmail.com
+[credential]
+	credentialStore = secretservice
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
