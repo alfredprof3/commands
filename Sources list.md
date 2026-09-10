@@ -1,6 +1,9 @@
+# Debian Sources List
+
 Source list configuration for privative
 
-## Config
+Config
+-----
 
 1. Adding **contrib non-free**
 
