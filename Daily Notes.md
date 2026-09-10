@@ -142,28 +142,6 @@ Cómo descargar e instalar MagisTV en una Smart TV
 https://www.ardilu.com/guias/como-descargar-e-instalar-magis-tv-para-smart-tv
 
 
-Confirmados
-- Alondra, 3 septiembre 2026        $250 127691001975164990 Banco Azteca Alondra Longoria Lira
-- Sofia, 6 septiembre 2026          $250 728969000148807177 Sping by OXXO Frida Flores Che
-- Narda, 6 septiembre 2026          $250 638180010154295823 Banco NU Narda Yañez Faustino
-- Jimena, 6 septiembre 2026         $250 638180010175253682 Banco NU Jimena Torres Gomez
-- Angélica, 6 septiembre 2026       $250 4189143076400590 Banorte Angelica Vaca Gonzalez
-- Paola, 6 sept8embre 2026          $250 638180010147587438 Banco NU Paola Lopez Uc
-- Hiromy, 6 septiembre 2026         $250 4169161465672383 Bancoppel Hiromy Andueza Herrera
-- Arath, 6 septiembre 2026          $250 4152314404341474 BBVA Arath Juarez Hernandez
-- Pamela, 6 septiembre 2026         $250 012180015583477969 BBVA Pamela Miramontes Cortes
-- Diana, 6 septiembre 2026          $250 722969069832326846 Mercado Pago Diana Marting Chi
-- Tamara, 6 septiembre 2026         $250 4152314080252417 BBVA Tamara Garcia Vazquez
-- Donnovan, 7 septiembre 2026       $250 4152314139598190 BBVA Donnovan Islas Franco
-
-
-
-
-
-                        TOTAL       $3,500
-
-
-
 https://youtu.be/Y67Z8xwl7t4?si=4xsxUzMu9tbO-U0i
 
 
