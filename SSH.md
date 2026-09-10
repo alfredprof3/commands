@@ -1,2 +1,3 @@
-Secure SHell. OpenSSH remote login client for linux
+# SSH - Secure SHell.
 
+OpenSSH remote login client for linux
