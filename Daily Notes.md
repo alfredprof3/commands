@@ -258,8 +258,8 @@ Because Debian repositories do not always pack the latest .deb packages for GCM 
    
    2. Create a safe directory for GCM and extract it:
    
-   sudo mkdir -p /usr/local/share/gcm
-   sudo tar -xvf gcm-linux_amd64.2.6.1.tar.gz -C /usr/local/share/gcm
+   sudo mkdir -p /usr/local/share/gcm-core
+   sudo tar -xvf gcm-linux_amd64.2.6.1.tar.gz -C /usr/local/share/gcm-core
    
    3. Create a Symlink: This creates a system-wide execution path so Git can instantly recognize the program when looking for manager.
    
@@ -280,7 +280,7 @@ Now we establish the encrypted database system. You must generate a cryptographi
 
    1. Generate your GPG master key:
    
-   gpg --generate-key
+   gpg --expert --full-generate-key
    
    Follow the onscreen prompts. Provide your name, email, and a secure master passphrase.
    2. Retrieve your GPG Key ID:
