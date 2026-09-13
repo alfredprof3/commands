@@ -1,3 +1,5 @@
+# Neovim Configuration (init.lua)
+
 -- Basic settings
 vim.opt.number = true           -- Show line numbers
 vim.opt.relativenumber = true   -- Relative line numbers
