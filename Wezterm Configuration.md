@@ -1,5 +1,7 @@
 # Wezterm Configuration
 
+Source: [Wezterm Configuration](https://wezterm.org/config/files.html)
+
 -- ~/.wezterm.lua
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
