@@ -1,4 +1,14 @@
-This is a tool
+# GPG - How to use
+
+Installation
+-----
+
+Install the most recent version of GNU Privacy Guard.
+`sudo apt install gnupg2`
+
+
+Generate your private key (private keys never expire)
+`gpg2 --expert --full-generate-key`
 
 ## References
 1. https://docs.gitcode.com/en/docs/help/gpg/
