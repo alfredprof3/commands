@@ -6,6 +6,9 @@ Usage
 List the help command available for `xset`
 `xset`
 
+List settings.
+`xset q`
+
 Turn off Display Power Management Signaling (DPMS)and screen saver.
 ```bash
 xset -dpms
