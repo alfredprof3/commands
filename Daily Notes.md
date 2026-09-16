@@ -364,6 +364,3 @@ Validate the system piece-by-piece to ensure no errors interrupt your workflow.
    
 Any consecutive Git requests on that repository or matching domain will silently look up the encrypted tree structure via pass, completely bypassing authentication prompts from this point forward.
 Did the manual mock token test execute successfully, or did it generate any missing dependency errors on your minimal kernel setup?
-
-
-This is a new line from virtual-manager in a headless environment
