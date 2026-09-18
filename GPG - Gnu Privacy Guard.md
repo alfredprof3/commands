@@ -32,6 +32,45 @@ List secret keys.
 `gpg2 --list-secret-keys --keyid-format=LONG`
 
 
+Expiration date
+-----
+
+List your keys
+`gpg2 --list-keys`
+
+Look for the line below `pub  ed25519 2020-09-11 [SC] [expires: 2020-09-21]`
+
+For example: We want to edit key AF4RGH94ADC84
+`gpg2 --edit-key AF4RGH94ADC84`
+
+```bash
+gpg> list
+
+sec     ed25519/AF4RGH94ADC84
+        created: 2020-09-11     expires: 2020-09-21     usage: SC
+        trust: ultimate         validity: ultimate
+ssb     cv25519/56ABDJFDKFN
+        created: 2020-09-11     expires: 2020-09-21     usage: E
+[ultimate] (1). John Doe <johndoe@mail.com>
+```
+
+We want to edit the first subkey (ssb). When you select key (1), you should see the `*` next to it such as `ssb*`
+
+```bash
+gpg> key 1
+gpg> expire     # set the expiration date
+gpg> save
+```
+
+Now select the main private key
+
+```bash
+gpg> key 0
+gpg> expire     # set the expiration date
+gpg> save
+```
+
+
 Backup your private keys
 -----
 
