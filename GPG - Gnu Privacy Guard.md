@@ -85,3 +85,9 @@ References
 2. https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
 3. https://blog.justme.ovh/posts/gpg-complete-guide-encryption-signing/
 4. https://gist.github.com/jfrobbins/5c2dbceb81c33afc5b0bcbe0d3343692
+5. https://unix.stackexchange.com/questions/552707/how-to-renew-an-expired-encryption-subkey-with-gpg
+6. https://unix.stackexchange.com/questions/177291/how-to-renew-an-expired-keypair-with-gpg
+7. https://mhdez.com/notes/renewing-an-expired-gpg-key/
+8. https://www.whatsdoom.com/posts/2023/02/28/updating-the-expiration-date-of-a-gpg-key/
+9. https://gist.github.com/krisleech/760213ed287ea9da85521c7c9aac1df0
+10. https://www.gnupg.org/documentation/manuals/gnupg/OpenPGP-Key-Management.html
