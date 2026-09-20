@@ -17,7 +17,7 @@
 15. Mdterm
 16. innomd
 17. ekphos
-18. hike
+18. hike → https://github.com/davep/hike
 19. mdp
 20. mdtt
 21. patat
