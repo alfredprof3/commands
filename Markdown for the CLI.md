@@ -8,7 +8,7 @@
 6. mdfried
 7. bat
 8. Inlyne
-9. Mandown
+9. Mandown → https://github.com/Titor8115/mandown
 10. Mdless
 11. MdTUI
 12. Smd
