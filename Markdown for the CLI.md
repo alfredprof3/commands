@@ -1,8 +1,8 @@
 # Markdown Terminal Viewers
 
 1. Lowdown
-2. Glow
-3. Frogmouth
+2. Glow → https://github.com/charmbracelet/glow
+3. Frogmouth → https://github.com/Textualize/frogmouth
 4. Leaf
 5. mdcat
 6. mdfried
