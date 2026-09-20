@@ -3,7 +3,7 @@
 1. Lowdown
 2. Glow → https://github.com/charmbracelet/glow
 3. Frogmouth → https://github.com/Textualize/frogmouth
-4. Leaf
+4. Leaf → https://github.com/rivolink/leaf
 5. mdcat
 6. mdfried
 7. bat
