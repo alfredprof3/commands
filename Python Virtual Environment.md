@@ -65,7 +65,38 @@ Upgrade the packages of a program installed in the virtual environment.
 → `python3.14 -m pip install --upgrade yt-dlp`
 
 
+pipx Installation
+-----
+
+Install per OS
+
+**macOS**
+```bash
+brew install pipx
+pipx ensurepath
+```
+
+**Linux**
+```bash
+sudo apt update
+sudo apt install pipx
+pipx ensurepath
+```
+
+**Using pip**
+```bash
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+```
+
+
 Documentation
 -----
 
 `vim /usr/share/doc/python3.13/README.venv`
+
+
+Reference
+-----
+
+1. [Install pipx](https://pipx.pypa.io/stable/how-to/install-pipx.html)
