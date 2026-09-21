@@ -163,17 +163,13 @@ En la ruta `/opt/homebrew` existen archivos que no para IA que no me había dado
 AI Skills
 -----
 
-impeccable
-
-taste skill
-
-playwright CLI
-
-Image to 3JS
-
-awesome deaign md
-
-ui skills
+* https://agentskills.io/home
+* impeccable
+* taste skill
+* playwright CLI
+* Image to 3JS
+* awesome deaign md
+* ui skills
 
 
 Git Credential Manager - Virtual Machine Setup
@@ -214,3 +210,25 @@ Example of `.gitconfig`
 	helper = /usr/local/bin/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+
+Discover and share Neovim Plugins
+-----
+
+https://dotfyle.com/
+
+Terminal Command Line Tools
+-----
+
+https://terminaltrove.com/
+
+Terminal Guide
+-----
+
+Comprehensive guide for Linux commands, Git workflows, and shell scripting. Learn by doing with [WebTerm](https://webterm.app/en)
+
+https://www.terminal.guide/
+
+Kickstart Neovim
+-----
+
+https://kickstartnvim.com/
