@@ -4,8 +4,8 @@
 2. Glow → https://github.com/charmbracelet/glow
 3. Frogmouth → https://github.com/Textualize/frogmouth
 4. Leaf → https://github.com/rivolink/leaf
-5. mdcat
-6. mdfried
+5. mdcat → https://github.com/BIRSAx2/mdcat
+6. mdfried → https://github.com/benjajaja/mdfried
 7. bat
 8. Inlyne
 9. Mandown → https://github.com/Titor8115/mandown
@@ -18,7 +18,7 @@
 16. innomd
 17. ekphos
 18. hike → https://github.com/davep/hike
-19. mdp
+19. mdp → https://github.com/visit1985/mdp
 20. mdtt
 21. patat
 22. presenterm
