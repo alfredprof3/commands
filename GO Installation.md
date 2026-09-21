@@ -32,12 +32,19 @@ You can do this by adding the following line to your $HOME/.profile or $HOME/.ba
 export PATH="$PATH:$(go env GOPATH)/bin"
 ```
 
-4. Restart any open terminal sessions for the changes to take effect.
+4. Downloading the `tar` file.
 
-5. Verify that you've installed Go by opening a command prompt and typing the following command:
+```bash
+cd /usr/local/ && curl -L -O https://go.dev/dl/go1.27.1.linux-amd64.tar.gz
+tar -xvf go1.27.1.linux-amd64.tar.gz
+```
+
+5. Restart any open terminal sessions for the changes to take effect.
+
+6. Verify that you've installed Go by opening a command prompt and typing the following command:
 
 ```bash
 go version
 ```
 
-6. Confirm that the command prints the installed version of Go.
+7. Confirm that the command prints the installed version of Go.
