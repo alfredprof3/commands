@@ -232,3 +232,127 @@ Kickstart Neovim
 -----
 
 https://kickstartnvim.com/
+
+Taskline
+-----
+
+  Base64 [0/0]
+   80. ●  base64 -i input_image.png [Converts an image to base64] 160d
+   81. ●  base64 -i input_image.png -o output_file.txt [The output conversion saved into a txt file] 160d
+   82. ●  base64 -i input_image.png | pbcopy [Send the encoded data to your clipboard] 160d
+   83. ●  echo 'data:image/png;base64,$(base64 -i input_image.png)' 160d
+   84. ●  openssl base64 -in input_image.png -out output_file.txt [OpenSSL can be used as an alternative] 160d
+   85. ●  base64 -D -i encoded.txt -o image.png [Decode a Base64 string back into an image file on macOS] 160d
+
+  Built-in tools [0/0]
+   86. ●  sips -Z 800 image.jpg [Resize an image using sips a built-in utility] 159d
+   87. ●  sips -Z 1024 *.png [Batch resize all images in a folder] 159d
+   88. ●  sips -Z 600 input.jpg --out output.jpg [Resize and save as a new file] 159d
+   89. ●  sips -g all image.jpg [see the dimensions, resolution, and color profile of an image] 159d
+   90. ●  sips -s format jpeg input.png --out output.jpg [Convert an image to a different format] 159d
+   91. ●  sips -f horizontal image.jpg [Flip horizontal] 159d
+   92. ●  sips -f vertical image.jpg [Flip vertical] 159d
+
+  Clipboard [0/0]
+   93. ●  echo 'Hello World' | pbcopy [Copy a string of text] 159d
+   94. ●  pbcopy < filename.txt [Copy the content of a file] 159d
+   95. ●  pwd | pbcopy [Copy the output of a command] 159d
+   96. ●  pbpaste > newfile.txt [Save the clipboard content to a new file] 159d
+   97. ●  pbpaste >> existing_file.txt [Append clipboard content to an existing file] 159d
+   98. ●  echo -n '' | pbcopy [Clear the clipboard] 159d
+
+  Encrypt & Decrypt [0/0]
+   78. ●  openssl enc -aes-256-cbc -salt -in file.txt -out file.txt.enc [Encrypt a file using openssl] 163d
+   79. ●  openssl enc -d -aes-256-cbc -in file.enc -out file.txt [Decrypt a file using openssl] 163d
+
+  Homebrew Commands [0/0]
+    3. ●  brew cleanup --prune=all [Removes outdated downloads and old versions of formulae/casks from the cache.] 255d
+    4. ●  brew cleanup [To clean Homebrew packages, for old versions and downloads 255d
+    5. ●  brew autoremove [To clean and remove orphaned dependencies] 255d
+    6. ●  brew uninstall wget [To uninstall a specific package] 255d
+    7. ●  brew uninstall --cask google-chrome [for GUI apps to keep your system tidy and free up space] 255d
+    8. ●  brew uninstall --force wget [Uninstalls a package and its dependencies, even if others rely on them, which can break other apps] 255d
+    9. ●  brew list [Shows all installed packages] 255d
+   10. ●  brew outdated [Lists formulae and casks that have newer versions available] 255d
+   11. ●  brew list --formula [Lists only formulae] 255d
+   12. ●  brew list --cask [Lists only cask] 255d
+   13. ●  To uninstall Homebrew Entirely -> https://github.com/Homebrew/install 255d
+
+  My Board [0/0]
+   21. ●  Blue matrix colorscheme selected for iIterm2 255d
+
+  Python Virtual Environment [0/0]
+   27. ●  python3 -m venv yt-dlp [Creates a new virtual environment] 234d
+   28. ●  source yt-dlp/bin/activate [Activates the virtual environment] 234d
+   29. ●  deactivate [Desactivates the virtual environment] 234d
+   30. ●  python3 -m pip install --upgrade pip [Prepare, install and update packages into a virtual environment.] 234d
+   31. ●  python3 -m pip --version [Check the actual version] 234d
+   32. ●  python3 -m pip install yt-dlp [Install the yt-dlp packages for example] 234d
+   33. ●  python3 -m pip install --upgrade yt-dlp [Upgrade the yt-dlp packages for example] 234d
+   99. ●  vim /usr/share/doc/python3.13/README.venv 17d
+
+  Scrcpy Commands [0/0]
+    2. ●  scrcpy --keyboard=uhid [Use scrcpy with a physical keyboard attached] 255d
+   14. ●  scrcpy --record=androidTest.mkv --record-format=mkv --no-audio -b16M --max-fps=60 --keyboard=uhid [Full-complete command to record phones screen using scrcpy] 255d
+   15. ●  scrcpy --record=androidTest.mkv --record-format=mkv [Record phones screen using scrcpy] 255d
+   16. ●  scrcpy --record=androidTest.mkv --record-format=mkv --no-audio [Record phones screen with NO audio] 255d
+   17. ●  scrcpy --record=androidTest.mkv --record-format=mkv -b16M [Record phones screen with a specific bitrate] 255d
+   18. ●  scrcpy --record=androidTest.mkv --record-format=mkv --max-fps=60 [Records phones screen with a specific Frame Rate] 255d
+   19. ●  scrcpy --record /Users/alfredxuser/Downloads/androidTest.mkv --record-format=mkv [Record phone's screen and save the file in a specific path directory] 255d
+   20. ●  scrcpy --record=androidTest.mkv --record-format=mkv --fullscreen [Record phone's screen and enter inmediately in fullscreen mode] 255d
+   22. ●  scrcpy --list-cameras [List the cameras and it's IDs available to record] 255d
+   23. ●  scrcpy --record=androidTest.mkv --record-format=mkv --video-source=camera --camera-id=0 [Record the front camera of the phone] 255d
+   68. ●  adb devices [List of devices attached] 218d
+   69. ●  scrcpy --serial=9a275b87 [Connect through the serial number devices attached] 218d
+
+  Shell Commands [0/0]
+    1. ●  history 1 [To see the full commands typed] 255d
+   71. ●  uname -m [Prints the CPU architecture name] 209d
+   72. ●  cat /proc/cpuinfo [Provides more detailed processor information] 209d
+   73. ●  getprop ro.product.cpu.abi [Display specific instruction sets in Android devices] 209d
+   74. ●  lscpu [Presents CPU information in a human-readable format] 209d
+   75. ●  dpkg --print-architecture [Shows the default architecture for which Termux/Linux installs packages] 209d
+   76. ●  sysctl -n machdep.cpu.brand_string [See the exact processor model] 209d
+   77. ●  system_profiler SPHardwareDataType [Display the Chip or Processor name, core count, and memory] 209d
+
+  Taskline [0/0]
+   24. ●  tl t 'task created' [Creates a task] 234d
+   25. ●  tl n 'note created' [Creates a note] 234d
+   26. ●  tl n 'note created in a board' -b 'Boards Name' [Creates a note and creates a new board] 234d
+   70. ●  tl edit <id_number> 'Update the note or task content' 209d
+
+  Vim [0/0]
+   34. ●  vim [open vim editor] 223d
+   35. ●  vim readme.md [open/create readme file in vim editor] 223d
+   36. ●  :vsplit theme.css [In Normal Mode, open the file in vertical screen/buffer/window] 223d
+   37. ●  :bd [In Normal Mode, close the screen/buffer/windows] 223d
+   38. ●  :bd! [In Normal Mode, force to close the screen/buffer/windows without saving changes] 223d
+   39. ●  :split .vimrc [In Normal Mode, open the file in horizontal screen/buffer/window] 223d
+   40. ●  <C-w> v [Vertical split screen/buffer/window] 223d
+   41. ●  <C-w> s [Horizontal split screen/buffer/window] 223d
+   42. ●  <C-w> h,j,k,l [Switch to the left, down, up and right screen/buffer/window] 223d
+   43. ●  <C-w> > [Increase the width of vertical split screen/buffer/window] 223d
+   44. ●  <C-w> < [Reduce the width of vertical split screen/buffer/window] 223d
+   45. ●  <C-w> + [Increase the height of horizontal split screen/buffer/window] 223d
+   46. ●  <C-w> - [Reduce the height of horizontal split screen/buffer/window] 223d
+   47. ●  <C-w> = [Reset the width and height of screen/buffer/window] 223d
+   48. ●  :new [In Normal Mode, open a new empty screen/buffer/window in horizontal split] 223d
+   49. ●  :vnew [In Normal Mode, open a new empty screen/buffer/window in vertical split] 223d
+   50. ●  h,j,k,l [Keyboard Shortcut Normal Mode; Left, Down, Up, Right] 223d
+   51. ●  w,b [Keyboard Shortcut Normal Mode; Next/previous word] 223d
+   52. ●  0,$ [Keyboard Shortcut Normal Mode; Start of line, end of line] 223d
+   53. ●  gg, G [Keyboard Shortcut Normal Mode; Top/bottom of file] 223d
+   54. ●  {, } [Keyboard Shortcut Normal Mode; Previous/next paragraph] 223d
+   55. ●  /pattern [Keyboard Shortcut Normal Mode; Search forward for pattern] 223d
+   56. ●  ?pattern [Keyboard Shortcut Normal Mode; Search backward for pattern] 223d
+   57. ●  n, N [Keyboard Shortcut Normal Mode; Next/previous search match] 223d
+   58. ●  :s/old/new/g [Keyboard Shortcut Normal Mode; Replace all old with new on current line] 223d
+   59. ●  :%s/old/new/g [Keyboard Shortcut Normal Mode; Replace all old with new in file] 223d
+   60. ●  :tabnew [Command-line; open a new-empty tab] 223d
+   61. ●  :tabedit [Command-line; Open a specified file in a new tab] 223d
+   62. ●  :tabclose [Command-line; close the current tab] 223d
+   63. ●  :tabnext [Command-line; switch to the next tab] 223d
+   64. ●  :tabprevious [Command-line; switch to the previous tab] 223d
+   65. ●  gt [Keyboard Shortcut Normal Mode; go to the next tab] 223d
+   66. ●  gT [Keyboard Shortcut Normal Mode; go to the previous tab] 223d
+   67. ●  3gt [Keyboard Shortcut Normal Mode; this will take you to the third tab] 223d
