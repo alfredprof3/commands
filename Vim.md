@@ -1,5 +1,8 @@
 # Neovim Installation
 
+Linux
+-----
+
 METHOD 1. Install From Source (Recommended)
 -----
 
@@ -41,7 +44,6 @@ sudo cpack -G DEB
 
 7. Run `nvim --version` to verify the version and the installation.
 
-
 Updating Neovim Installed from Source
 -----
 
@@ -82,7 +84,7 @@ curl -L -O https://github.com/neovim/neovim/releases/latest/download/nvim-linux-
 
 2. Extract the tarball.
 
-`sudo tar -zxvf nvim-linux-x86_64.tar.gz`
+`sudo tar -xzvf nvim-linux-x86_64.tar.gz`
 
 3. Remove the downloaded `tar.gz` file.
 
@@ -100,9 +102,30 @@ curl -L -O https://github.com/neovim/neovim/releases/latest/download/nvim-linux-
 
 `nvim --version`
 
+Updating Neovim Installed from the Tarball
+-----
+
+1. Download the latest tarball release.
+
+```bash
+cd /opt
+curl -L -O https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+```
+
+2. First, clear out any previous installations there, and then extract the new tarball.
+
+```bash
 sudo rm -rf /opt/nvim-linux-x86_64
-sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
-rm nvim-linux-x86_64.tar.gz
+sudo tar -C /opt -xzvf nvim-linux-x86_64.tar.gz
+```
+
+3. Once extracted, you can safely clean up and remove the downloaded archive file.
+
+`rm nvim-linux-x86_64.tar.gz`
+
+4. Verify the installation.
+
+`nvim --version`
 
 
 Usage
