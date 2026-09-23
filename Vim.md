@@ -1,9 +1,108 @@
-# Neovim
+# Neovim Installation
 
-Install
+METHOD 1. Install From Source (Recommended)
 -----
 
-`sudo apt install neovim`
+1. Install build prerequisites on your system.
+
+`sudo apt-get install ninja-build gettext cmake curl build-essential git linux-headers-$(uname -r)`
+
+2. Clone the repository in `/opt` path.
+
+```bash
+cd /opt
+git clone htttps://github.com/neovim/neovim.git
+```
+
+3. Select the stable release.
+
+```bash
+cd neovim
+git checkout stable
+```
+
+4. Compile neovim.
+
+```bash
+sudo make CMAKE_BUILD_TYPE=Release      # or CMAKE_BUILD_TYPE=RelWithDebInfo for debugging info
+sudo make install
+```
+
+5. Create the `.deb` package
+
+```bash
+cd build
+sudo cpack -G DEB
+```
+
+6. Install the `.deb` package.
+
+`sudo dpkg -i nvim-linux-(arch).deb      # with (arch) either x86_64 or arm64`
+
+7. Run `nvim --version` to verify the version and the installation.
+
+
+Updating Neovim Installed from Source
+-----
+
+1. Navigate to your local Neovim source directory in your terminal.
+
+```bash
+cd /opt/neovim
+git fetch
+git log -l              # confirm the latest commit date matches recent updates
+git checkout stable
+git pull
+```
+
+2. Clean any previous build artifacts if necessary and compile the updated source code.
+
+```bash
+sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd build
+sudo cpack -G DEB
+```
+
+3. Install the new `.deb` package created.
+
+`sudo dpkg -i nvim-linux-(arch).deb      # with (arch) either x86_64 or arm64`
+
+4. Run `nvim --version` to verify that the version number has successfully updated.
+
+
+METHOD 2. Install from a Tarball
+-----
+
+1. Download the tarball from the official GitHub repository.
+
+```bash
+cd /opt
+curl -L -O https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+```
+
+2. Extract the tarball.
+
+`sudo tar -zxvf nvim-linux-x86_64.tar.gz`
+
+3. Remove the downloaded `tar.gz` file.
+
+`sudo rm -v nvim-linux-x86_64.tar.gz`
+
+4. Add Neovim to your System `PATH` in your current shell (`.bahsrc` or `.zshrc`).
+
+`export PATH="$PATH:/opt/nvim-linux-x86_64/bin"`
+
+5. Reload your shell configuration to apply the changes
+
+`source ~/.bashrc       # or source .zshrc`
+
+6. Verify the installation.
+
+`nvim --version`
+
+sudo rm -rf /opt/nvim-linux-x86_64
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+rm nvim-linux-x86_64.tar.gz
 
 
 Usage
