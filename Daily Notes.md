@@ -356,3 +356,151 @@ Taskline
    65. ●  gt [Keyboard Shortcut Normal Mode; go to the next tab] 223d
    66. ●  gT [Keyboard Shortcut Normal Mode; go to the previous tab] 223d
    67. ●  3gt [Keyboard Shortcut Normal Mode; this will take you to the third tab] 223d
+
+---
+
+Using **.NET Global Tools** is a fantastic choice for managing Git Credential Manager (GCM) across both Linux and macOS. It keeps user-level binaries neatly isolated, doesn't require root/sudo access for updates, and allows you to update instantly via a single command.
+
+Alternatively, if you want an even easier path on macOS, **Homebrew** is natively maintained and handles updates seamlessly. Below is a comprehensive guide tailored to both operating systems using the **.NET Tool approach**, plus a native macOS Homebrew option just in case you prefer it.
+
+---
+
+### Phase 1: Clean Up Existing Installations
+
+Before switching, clear out your old `.deb` or manual installations so they don’t conflict with your new setup.
+
+* **On Linux (Remove old `.deb` package):**
+```bash
+sudo dpkg --purge git-credential-manager
+
+```
+
+
+* **On macOS (If you previously used Homebrew cask):**
+```bash
+brew uninstall --cask git-credential-manager
+
+```
+
+
+
+---
+
+### Phase 2: Linux Setup & Migration
+
+#### Step 1: Ensure .NET SDK is Installed
+
+GCM requires the .NET SDK (version 10.0 or compatible later runtime depending on the latest package release requirements).
+
+* Check if you have it: `dotnet --version`
+* If it’s missing, install it via your Linux distribution's package manager or Microsoft's official apt/dnf repositories. For example, on Ubuntu/Debian:
+```bash
+sudo apt update && sudo apt install dotnet-sdk-10.0
+
+```
+
+
+
+#### Step 2: Install GCM as a .NET Global Tool
+
+Run the following command to install GCM globally:
+
+```bash
+dotnet tool install -g git-credential-manager
+
+```
+
+#### Step 3: Configure Your PATH (If Needed)
+
+The terminal will output a warning if the .NET tools directory isn't in your shell's `PATH`. If it isn't, add it by appending this line to your `~/.bashrc` or `~/.zshrc`:
+
+```bash
+export PATH="$PATH:$HOME/.dotnet/tools"
+
+```
+
+*(Reload your shell using `source ~/.bashrc` or `source ~/.zshrc`)*.
+
+#### Step 4: Configure Git
+
+Run the configuration command to link GCM to your global Git settings:
+
+```bash
+git-credential-manager configure
+
+```
+
+---
+
+### Phase 3: macOS Setup & Migration
+
+*(Note: While you can use the .NET tool method on macOS identically to Linux, **Homebrew** is generally preferred on macOS because it doesn't require manually managing the .NET SDK solely for GCM. Both options are outlined below).*
+
+#### Option A: The .NET Tool Method (Matching Linux)
+
+1. **Install .NET SDK via Homebrew:**
+```bash
+brew install --cask dotnet-sdk
+
+```
+
+
+2. **Install GCM Tool:**
+```bash
+dotnet tool install -g git-credential-manager
+
+```
+
+
+3. **Configure Git:**
+```bash
+git-credential-manager configure
+
+```
+
+
+
+#### Option B: The Homebrew Cask Method (Recommended for macOS)
+
+If you prefer not to manage .NET manually on macOS, Homebrew handles everything (including easy command-line updates) natively:
+
+1. **Install GCM:**
+```bash
+brew install --cask git-credential-manager
+
+```
+
+
+2. **Configure Git:**
+```bash
+git-credential-manager configure
+
+```
+
+
+
+---
+
+### Phase 4: How to Update Going Forward
+
+Once migrated, updating GCM becomes effortless on both machines:
+
+* **If using the .NET Tool approach (Both Linux & macOS):**
+Instead of downloading `.deb` packages or compiling code, you can update across any platform using a single line:
+```bash
+dotnet tool update -g git-credential-manager
+
+```
+
+
+* **If using Homebrew (macOS alternative):**
+```bash
+brew upgrade --cask git-credential-manager
+
+```
+
+
+
+---
+
+Would you like any specific adjustments for setting up a shell alias so you can trigger updates with a custom short command?
