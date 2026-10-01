@@ -53,7 +53,7 @@ sudo tar -xvf gcm-linux_amd64.2.6.1.tar.gz -C /usr/local/share/gcm-core
 
 5. Verify Git can now see it:
 
-`git credential-manager --version`
+`git-credential-manager --version`
 
 
 Step 3: Establish the Encryption Pair (gpg & pass)
