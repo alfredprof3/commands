@@ -29,19 +29,8 @@ https://gist.github.com/rahaaatul/cc47d88dddd73a684e67bfa0f8b57d9d
 ### Pass git helper
 https://github.com/languitar/pass-git-helper
 
-## 23-02-2025, Sunday
-- entry
-## 15-02-2025, Saturday
-- entry
-## 09-02-2025, Sunday
-- entry
-
 ---
-# January 2025
-## 21-01-2025, Tuesday
-- entry
-## 12-01-2025, Sunday
-- Terminar el archivo Dconf para importar y exportar perfiles Gnome
+
 ## 11-01-2025, Saturday
 - https://wiki.archlinux.org/title/XDG_user_directories
 - https://www.freecodecamp.org/news/linux-chmod-chown-change-file-permissions/
@@ -60,6 +49,7 @@ https://github.com/languitar/pass-git-helper
 - https://gitlab.com/parrotsec/project/debian-conversion-script
 - https://www.qubes-os.org/downloads/
 - https://www.whonix.org/
+
 ## 05-01-2025, Sunday
 - https://superuser.com/questions/59418/how-to-type-special-characters-in-linux
 - https://askubuntu.com/questions/1407203/i-dont-have-the-and-symbols-on-my-keyboard-how-to-assign-a-shortcut-to
@@ -88,6 +78,7 @@ https://github.com/languitar/pass-git-helper
 	- bibata-cursor
 	- git
 	- inkscape
+
 ## 29-12-2024, Sunday
 - Links
 	- [Pop_OS Guide](https://pop-os.github.io/docs/getting-started/getting-started.html)
@@ -112,6 +103,7 @@ https://github.com/languitar/pass-git-helper
 	- [Connect to Wi-Fi From Terminal on Debian 11/10 with WPA Supplicant](https://www.linuxbabe.com/debian/connect-to-wi-fi-from-terminal-on-debian-wpa-supplicant)
 	- [Connect to Wi-Fi From Terminal on Ubuntu 22.04/20.04 with WPA Supplicant](https://www.linuxbabe.com/ubuntu/connect-to-wi-fi-from-terminal-on-ubuntu-18-04-19-04-with-wpa-supplicant)
 	- [How to Use Timeshift from Command Line in Linux](https://dev.to/rahedmir/how-to-use-timeshift-from-command-line-in-linux-1l9b)
+
 ## 27-12-2024, Friday
 - https://www.madpenguin.org/how-to-set-default-browser-in-linux/
 - https://linuxconfig.org/how-to-set-browser-environment-variable-on-linux
@@ -120,6 +112,7 @@ https://github.com/languitar/pass-git-helper
 - https://thelinuxcode.com/open-default-browser-command-line-linux/
 - https://askubuntu.com/questions/16621/how-to-set-the-default-browser-from-the-command-line
 - https://askubuntu.com/questions/8252/how-to-launch-default-web-browser-from-the-terminal
+
 ## 25-12-2024, Wednesday
 - Clone the repo via `git clone https://github.com/alfredprof3/Linux.git`
 - After cloning the repo, `cd Linux`  to get inside the directory
@@ -306,6 +299,7 @@ Taskline
    69. ●  scrcpy --serial=9a275b87 [Connect through the serial number devices attached] 218d
 
   Shell Commands [0/0]
+    1. ●  cat /sys/class/power_supply/BAT0/capacity
     1. ●  history 1 [To see the full commands typed] 255d
    71. ●  uname -m [Prints the CPU architecture name] 209d
    72. ●  cat /proc/cpuinfo [Provides more detailed processor information] 209d
